@@ -7,10 +7,10 @@ import RegisterPage from './register/RegisterPage'
 
 // styles
 import s from './index.module.scss'
-import { instance } from '../../utils/axios/axios'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { login } from '../../stores/slice/authSlice'
+import { AppErrors } from '../../common/errors/errors'
 
 
 const AuthRootComponent = () => {
@@ -28,7 +28,7 @@ const AuthRootComponent = () => {
 		if (location.pathname === '/login') {
 			try {
 				const userData = {
-					name: "і",
+					name,
 					email,
 					password,
 					avatar: "https://example.com/avatar.jpg"
@@ -41,17 +41,22 @@ const AuthRootComponent = () => {
 			}
 		} else {
 			if (password === repeatPassword) {
-				const userData = {
-					name,
-					email,
-					password,
-					avatar: "https://example.com/avatar.jpg",
-					repeatPassword
+				try {
+					const userData = {
+						name,
+						email,
+						password,
+						avatar: "https://example.com/avatar.jpg",
+						repeatPassword
+					}
+					const newUser = await axios.post('https://api.escuelajs.co/api/v1/users', userData)
+					await dispatch(login(newUser.data))
+					navigate('/')
+				} catch (e) {
+					return e
 				}
-				const newUser = await axios.post('https://api.escuelajs.co/api/v1/users', userData)
-				console.log(newUser)
 			} else {
-				alert("passwords don't match")
+				alert(AppErrors.PasswordDoNotMatch)
 			}
 		}
 	}
@@ -66,6 +71,8 @@ const AuthRootComponent = () => {
 						<LoginPage
 							setEmail={setEmail}
 							setPassword={setPassword}
+							setName={setName}
+							navigate={navigate}
 						/>
 						: location.pathname === '/register' ?
 							<RegisterPage
@@ -73,7 +80,7 @@ const AuthRootComponent = () => {
 								setPassword={setPassword}
 								setRepeatPassword={setRepeatPassword}
 								setName={setName}
-							// setUsername={setUsername}
+								navigate={navigate}
 							/>
 							: null}
 				</form>
@@ -83,3 +90,4 @@ const AuthRootComponent = () => {
 }
 
 export default AuthRootComponent
+

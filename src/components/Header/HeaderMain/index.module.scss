@@ -1,0 +1,60 @@
+.headerMain {
+	background-image: url("../../../assets/img/Header/HeaderMain.png");
+	background-repeat: no-repeat;
+	// height: calc(100vh - 140px);
+	height: 800px;
+	position: relative;
+	&__wrapper {
+		width: 320px;
+		height: 320px;
+		border: 3px solid black;
+		position: absolute;
+		top: 160px;
+		left: 50%;
+		transform: translate(-50%);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&__title {
+		line-height: 30px;
+		text-align: center;
+		.title__top {
+			color: #ffffff;
+			font-size: 64px;
+			font-weight: 700;
+			text-align: center;
+			display: inline-block;
+			position: relative;
+			&::before {
+				content: "";
+				border-bottom: 2px solid #fff;
+				position: absolute;
+				width: 100%;
+				bottom: -15px;
+			}
+		}
+		.title__bottom {
+			font-size: 22px;
+			font-weight: 400;
+		}
+	}
+	&__subtitle {
+		position: absolute;
+		bottom: 150px;
+		padding: 0 600px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 400;
+	}
+}
+@media only screen and (max-width: 576px) {
+	.headerMain {
+		&__subtitle {
+			padding: 0 720px;
+			&__text {
+				font-size: 15px;
+			}
+		}
+	}
+}

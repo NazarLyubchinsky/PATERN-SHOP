@@ -3,7 +3,7 @@ import React from 'react'
 // style
 import s from '../index.module.scss'
 
-const LoginPage = ({ setEmail, setPassword,  }) => {
+const LoginPage = ({ setEmail, setPassword, setName, navigate }) => {
 	return (
 		<div className={s.wrapper}>
 			<div className={s.close}
@@ -20,6 +20,17 @@ const LoginPage = ({ setEmail, setPassword,  }) => {
 				{/* <form className={s.form} onSubmit={handleSubmit}> */}
 				<div className={s.group}>
 					<input
+						type="text"
+						placeholder="Your name"
+						name="name"
+						// value={values.name}
+						autoComplete="off"
+						onChange={(e) => setName(e.target.value)}
+						required
+					/>
+				</div>
+				<div className={s.group}>
+					<input
 						type="email"
 						placeholder="Your email"
 						name="email"
@@ -29,6 +40,8 @@ const LoginPage = ({ setEmail, setPassword,  }) => {
 						required
 					/>
 				</div>
+
+
 
 				<div className={s.group}>
 					<input
@@ -43,8 +56,9 @@ const LoginPage = ({ setEmail, setPassword,  }) => {
 				</div>
 
 				<div
-					// onClick={() => toggleCurrentFormType("signup")}
+					onClick={() => navigate('/register')}
 					className={s.link}
+
 				>
 					Create an account
 				</div>

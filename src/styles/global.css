@@ -8,8 +8,9 @@ body {
 	color: #fff;
 	font-weight: 500;
 	padding-bottom: 20px;
-}
+	font-family: "Post No Bills Jaffna-Bold", Helvetica;
 
+}
 
 h1,
 h2,
@@ -53,4 +54,9 @@ li {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+}
+
+section {
+	width: 1920px;
+
 }

@@ -3,7 +3,7 @@ import React from 'react'
 // styles 
 import s from '../index.module.scss'
 
-const RegisterPage = ({ setEmail, setPassword, setRepeatPassword, setName }) => {
+const RegisterPage = ({ setEmail, setPassword, setRepeatPassword, setName, navigate }) => {
 	return (
 		<div className={s.wrapper}>
 			{/* <div className={s.close} onClick={closeForm}>
@@ -18,6 +18,17 @@ const RegisterPage = ({ setEmail, setPassword, setRepeatPassword, setName }) => 
 				{/* <form className={s.form} onSubmit={handleSubmit}> */}
 				<div className={s.group}>
 					<input
+						type="text"
+						placeholder="Your name"
+						name="name"
+						// value={values.name}
+						autoComplete="off"
+						onChange={(e) => setName(e.target.value)}
+						required
+					/>
+				</div>
+				<div className={s.group}>
+					<input
 						type="email"
 						placeholder="Your email"
 						name="email"
@@ -28,17 +39,7 @@ const RegisterPage = ({ setEmail, setPassword, setRepeatPassword, setName }) => 
 					/>
 				</div>
 
-				<div className={s.group}>
-					<input
-						type="name"
-						placeholder="Your name"
-						name="name"
-						// value={values.name}
-						autoComplete="off"
-						onChange={(e) => setName(e.target.value)}
-						required
-					/>
-				</div>
+
 
 				<div className={s.group}>
 					<input
@@ -65,7 +66,7 @@ const RegisterPage = ({ setEmail, setPassword, setRepeatPassword, setName }) => 
 				</div>
 
 				<div className={s.link}
-				// onClick={() => toggleCurrentFormType("login")}
+					onClick={() => navigate('/login')}
 				>I already have an account</div>
 
 				<button type="submit" className={s.submit}>
