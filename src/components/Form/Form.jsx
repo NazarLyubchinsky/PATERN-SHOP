@@ -18,7 +18,7 @@ const Form = () => {
 
 	const { user, setUser } = useContext(CustomContext)
 
-
+console.log(user)
 	const registerUser = (e) => {
 		e.preventDefault()
 
