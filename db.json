@@ -1,0 +1,119 @@
+{
+  "users": [
+    {
+      "email": "assadasd@mail.ru",
+      "password": "$2a$10$6a0ulZI6/4KjMtsDDuT8aOX0Spn.Zvs8zDj.NnX67UfzR1TG6orHW",
+      "id": 1
+    },
+    {
+      "email": "askar@mail.ru",
+      "password": "$2a$10$oUrWbgo78nuPgMjrZVivKe4rZ5fzEsQ.ZbvzA0y/4GWPzSRDR0SJ.",
+      "id": 2
+    },
+    {
+      "email": "askar1@mail.ru",
+      "password": "$2a$10$Kdc0hpKRhaSC9Y7S6p162e.qMGK7HUG1.EUtlu6p2ZdCIBQuMZIse",
+      "id": 3
+    },
+    {
+      "email": "aimana@mail.ru",
+      "password": "$2a$10$NsTj8mTcbOWhdZ/rjHjBw../n1DCcj6uFUfyqeuUnpVmVFXSDTC.G",
+      "id": 4
+    },
+    {
+      "email": "max123@mail.ru",
+      "password": "$2a$10$0zYHpPLSpg0vqPEM9hO2/OUximPgwxCm3Fi2/3GwXxOWrblHCcq1C",
+      "id": 5
+    },
+    {
+      "email": "muslim@mail.ru",
+      "password": "$2a$10$BUGoLNkK6pN.eSniGrPQJ.O8aa9PBgN6xp6nAihwOqUQ7HvWlNMWm",
+      "id": 6
+    },
+    {
+      "email": "malik@mail.ru",
+      "password": "$2a$10$MIJnILTTLZJFOjrPdmWZsO4LToRskm8hCPt5F.x3eVii/Ai.pckuK",
+      "id": 7
+    },
+    {
+      "email": "nazar.muxal@gmail.com",
+      "password": "$2a$10$sBkF6wX.iTxPbvc8G0pMg./MWyUfyafJBKS9kyZwdO6JWsgsLe1L6",
+      "id": 8
+    },
+    {
+      "email": "nazawr.muxal@gmail.com",
+      "password": "$2a$10$EMb5IH9xrqEp5M6lqjKyYORwC2rJQg87Fc/cbOnTpMC3nNdATKAzW",
+      "id": 9
+    },
+    {
+      "email": "naz12ar.muxal@gmail.com",
+      "password": "$2a$10$7KuOfbQDlGDKLR9l4dVA0.1yxGO3mUwMsc0nH03qntHJ7FVpmFZ5W",
+      "id": 10
+    },
+    {
+      "email": "naz111ar.muxal@gmail.com",
+      "password": "$2a$10$5Ta34zD/fHU6EZLeV.EaQOYQ1UBN0iGvZcV2ZaUao8K.3TbqRfZaO",
+      "id": 11
+    },
+    {
+      "email": "naza11r.muxal@gmail.com",
+      "password": "$2a$10$X1Q8srpLYCRukY2KCI1Vu.7VtY44UM4zPR.qIajGqP86otUfL04Om",
+      "id": 12
+    },
+    {
+      "email": "n12121azar.muxal@gmail.com",
+      "password": "$2a$10$KrlQuj2mgXTLvdKrUM51TuGYwLMkog.j3adgm2SiQyf.TQ9uTY67.",
+      "id": 13
+    },
+    {
+      "email": "na11zar.muxal@gmail.com",
+      "password": "$2a$10$Q/PNrkUS1pd5XTh/19a35.uyEmVNHid9CAth8UCchzlqX9P/BDkHW",
+      "id": 14
+    },
+    {
+      "email": "na1za1r.muxal@gmail.com",
+      "password": "$2a$10$hdNWrggNzxGiT3fXFzNeWe.2HxkfSMApsO14gSqmZnFYH43j3AoXO",
+      "id": 15
+    },
+    {
+      "email": "jo2h22n@mail.com",
+      "password": "$2a$10$IYZ1USC968rBgNjji8wk6OzgyWL4j8assiRomRx0a.5El0H2PZPaC",
+      "id": 16
+    },
+    {
+      "email": "jofwdwwddwddfn@mail.com",
+      "password": "$2a$10$rgts05bzQ/Cheg0x0X/USuzPQE6rdkmsz9UZBU3dDSRiJjE6G//G2",
+      "id": 17
+    },
+    {
+      "email": "1nazar.muxal@gmail.com",
+      "password": "$2a$10$48KaLCMydtzUQcqjOVxq2OeqXFA4Av6Wp86jBfYrCXW1GeBsJswRe",
+      "id": 18
+    },
+    {
+      "email": "1n2azar.muxal@gmail.com",
+      "password": "$2a$10$xVI7ARe3FjlfiDVSR5px..GfcLI1JmklLAVpKc8x0ycI0xtkKmIWu",
+      "id": 19
+    },
+    {
+      "email": "jo55hn@mail.com",
+      "password": "$2a$10$c2N9GxbUE1JklPkbmgXCEOxjypY.mK0Q.sTKXrqLyCkffgUsIE65G",
+      "id": 20
+    },
+    {
+      "email": "na5544zar.muxal@gmail.com",
+      "password": "$2a$10$oKz9AQalRvAM9eNCYTPnXOeXoMZKNjyU/RFqTrfATjBNr6.r9sX0K",
+      "id": 21
+    },
+    {
+      "email": "1naz2232ar.muxal@gmail.com",
+      "password": "$2a$10$jlilikkbVh01.JOTOtTT5uK6gtyjQ.vknc/WGSIDskOQAMg.DwcZe",
+      "id": 22
+    },
+    {
+      "email": "nazar@gmai.com",
+      "password": "$2a$10$IqYajIJS/2yZtuSTSRCZIuvhQHJGwfUQtwRJyos.HdClKBj.j2KdC",
+      "id": 23
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.form {
+	color: white;
+	max-width: 400px;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	&__email {
+		margin-bottom: 30px;
+		cursor: pointer;
+	}
+	&__title {
+		margin-bottom: 40px;
+	}
+	&__field {
+		width: 100%;
+		height: 40px;
+		margin-bottom: 20px;
+		border: none;
+		background: transparent;
+		outline: none;
+		padding: 0 7px;
+		border-bottom: 1px solid white;
+	}
+	&__btn {
+		margin-bottom: 30px;
+		padding: 10px 0;
+		background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+		border-radius: 10px;
+		font-family: "Gilroy", sans-serif;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 17px;
+		line-height: 17px;
+		border: none;
+		cursor: pointer;
+		/* identical to box height */
+
+		color: #ffffff;
+	}
+	&__password {
+		position: relative;
+	}
+	&__eye {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 5px;
+		cursor: pointer;
+		z-index: 10;
+	}
+	&__create{
+		text-align: right;
+		margin-bottom: 30px;
+	 }
+}

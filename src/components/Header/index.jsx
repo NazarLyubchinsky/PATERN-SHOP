@@ -5,14 +5,16 @@ import TopLine from './TopLine'
 
 const Header = () => {
 	return (
-		<div>
+		<div style={{
+			width: '100%',
+		}}>
 			<TopLine />
 			<div style={{
 				backgroundColor: '#0f0f0f',
 
 			}}>
 				<SecondLine />
-				<HeaderMain />
+				{/* <HeaderMain /> */}
 			</div>
 		</div>
 	)

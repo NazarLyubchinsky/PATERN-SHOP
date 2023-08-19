@@ -1,4 +1,6 @@
+
 import AppRoutes from "./components/Routes/Routes";
+
 
 function App() {
 	return (
