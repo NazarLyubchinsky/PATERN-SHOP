@@ -17,11 +17,7 @@ const HeaderMain = () => {
 					</div>
 				</div>
 			</div>
-				<div className={s.headerMain__subtitle}>
-					<p className={s.headerMain__subtitle__text}>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-						Harum reprehenderit ullam asperiores pariatur delectus, nostrum eligendi magnam, cumque inventore quos ducimus explicabo quidem suscipit
-						fugiat perspiciatis? Ea veniam deserunt quod.</p>
-				</div>
+			
 		</section>
 	)
 }

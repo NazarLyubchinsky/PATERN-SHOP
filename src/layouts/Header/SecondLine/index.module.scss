@@ -42,12 +42,12 @@
 }
 @media only screen and (max-width: 1500px) {
 	.secondLine {
-		padding: 0 250px;
+		padding: 0 220px;
 	}
 }
 @media only screen and (max-width: 1200px) {
 	.secondLine {
-		padding: 0 150px;
+		padding: 0 120px;
 	}
 }
 @media only screen and (max-width: 992px) {
@@ -58,8 +58,10 @@
 @media only screen and (max-width: 768px) {
 	.secondLine {
 		height: 100px;
-		&__logo{
+		margin-top: 10px;
+		&__logo {
 			width: 100%;
+			font-size: 30px;
 		}
 		&__wrapper {
 			flex-direction: column;
@@ -74,6 +76,37 @@
 		}
 	}
 }
-// @media only screen and (max-width: 576px) {
-
-// }
+@media only screen and (max-width: 480px) {
+	.secondLine {
+		padding: 0 15px;
+		&__logo {
+			font-size: 26px;
+		}
+	}
+}
+@media only screen and (max-width: 385px) {
+	.secondLine {
+		&__navigation {
+			gap: 10px;
+		}
+		&__list {
+			font-size: 14px;
+		}
+		&__user {
+			font-size: 14px;
+		}
+	}
+}
+@media only screen and (max-width: 340px) {
+	.secondLine {
+		&__navigation {
+			gap: 15px;
+		}
+		&__list {
+			font-size: 13px;
+		}
+		&__user {
+			font-size: 13px;
+		}
+	}
+}

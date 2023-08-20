@@ -1,14 +1,15 @@
 import React from 'react';
-import Header from '../Header';
+import NewSeason from '../../layouts/NewSeason/NewSeason';
+
+// import Header from '../Header';
 
 const Home = () => {
 	return (
 		<div style={{
-			display: 'flex',
-			justifyContent: 'center'
+			// display: 'flex',
+			// justifyContent: 'center'
 		}}>
-
-			< Header />
+			<NewSeason />
 		</div >
 	);
 };

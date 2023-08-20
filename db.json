@@ -114,6 +114,16 @@
       "email": "nazar@gmai.com",
       "password": "$2a$10$IqYajIJS/2yZtuSTSRCZIuvhQHJGwfUQtwRJyos.HdClKBj.j2KdC",
       "id": 23
+    },
+    {
+      "email": "nazarmuxal@gmail.com",
+      "password": "$2a$10$RMvUxtS2pv8M4EKmF2xo5uZt4kExSvsWimIo12yFd91d8tAoiDFJi",
+      "id": 24
+    },
+    {
+      "email": "nazar.mixal@gmail.com",
+      "password": "$2a$10$O80MXjjVNw7jQVPGwyqGr.8ZqF/6kf2N76gFLmeC7u41Kk/BPys..",
+      "id": 25
     }
   ]
 }

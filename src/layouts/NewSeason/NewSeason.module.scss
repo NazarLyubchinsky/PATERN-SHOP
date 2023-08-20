@@ -1,0 +1,133 @@
+.season {
+	display: flex;
+	justify-content: space-between;
+	&__left {
+		width: 50%;
+		&_title {
+			margin-top: 90px;
+			font-size: 36px;
+			font-weight: 700;
+			text-align: center;
+			position: relative;
+			&::after {
+				content: "";
+				width: 100px;
+				background-color: #fff;
+				height: 1px;
+				position: absolute;
+				bottom: -50px;
+				left: 50%;
+				transform: translate(-50%);
+			}
+		}
+		&_cards {
+			margin-top: 100px;
+			gap: 50px;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 80px;
+			.card {
+				&__img {
+					width: 100%;
+					background-color: #191b1c;
+					padding: 55px 20px;
+				}
+				&__text {
+					margin-top: 20px;
+					font-family: "Playfair Display-RegularRoman", Helvetica;
+					font-size: 18px;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	&__right {
+		max-height: 730px;
+		width: 50%;
+		&_img {
+			background-image: url("../../assets/img/NewSeason/bgRight.png");
+			width: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100%;
+			// img{
+			// 	width: 100%;
+			// 	height: 100%;
+			// }
+		}
+	}
+}
+@media only screen and (max-width: 1500px) {
+	.season {
+		&__left {
+			width: 60%;
+			&_title {
+				margin-top: 50px;
+			}
+			&_cards {
+				margin-bottom: 20px;
+				padding: 0 50px;
+			}
+		}
+		&__right {
+			width: 40%;
+		}
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.season {
+		&__left {
+			width: 70%;
+		}
+		&__right {
+			width: 30%;
+		}
+	}
+}
+@media only screen and (max-width: 992px) {
+	.season {
+		flex-direction: column;
+		&__left {
+			width: 100%;
+		}
+		&__right {
+			display: none;
+		}
+	}
+}
+@media only screen and (max-width: 730px) {
+	.season {
+		&__left {
+			width: 100%;
+			&_cards {
+				padding: 0 22px;
+				flex-wrap: wrap;
+				.card {
+					width: calc(50% - 25px);
+					&__img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 500px) {
+	.season {
+		&__left {
+			width: 100%;
+			&_cards {
+				.card {
+					width: 100%;
+					&__img {
+						padding: 60px;
+						img {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
