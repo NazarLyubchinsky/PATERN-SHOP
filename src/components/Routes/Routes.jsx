@@ -17,13 +17,13 @@ const AppRoutes = () => {
 		<Routes>
 			{user && user.email ?
 				<Route path='/' element={<Layout />} >
-					<Route path='/home' element={<Home />} />
+					<Route path='/' element={<Home />} />
 				</Route>
 				:
 				<Route path="/" element={<Register />} />}
 
 			<Route path="/login" element={<Login />} />
-			{/* <Route path="/register" element={<Register />} /> */}
+			<Route path="/register" element={<Register />} />
 		</Routes>
 
 

@@ -40,7 +40,7 @@ const Form = () => {
 					token: data.accessToken,
 					...data.user
 				}))
-				navigate('/home')
+				navigate('/')
 			})
 			.catch((err) => console.log(err.message))
 
@@ -48,7 +48,7 @@ const Form = () => {
 
 	return (
 		<div className={s.content}>
-			<form  className={s.form} onSubmit={registerUser}>
+			<form className={s.form} onSubmit={registerUser}>
 
 				{
 					status && <p className={s.form__email} onClick={() => setStatus(false)}>{email}

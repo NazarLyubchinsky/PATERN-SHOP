@@ -9,6 +9,11 @@
       "email": "joh2n@mail.com",
       "password": "$2a$10$gStufls2DdsTQnkK.2Dcj.a9FgQ8ZqfoLFNUVLRSRJ31xblWP9dfW",
       "id": 2
+    },
+    {
+      "email": "nazar.xal@gmail.com",
+      "password": "$2a$10$nyBGtlKYJGkC1UK9YNLh6.sft.VO5A5FKKs.jrB/SzzkQJfT/VxbC",
+      "id": 3
     }
   ]
 }

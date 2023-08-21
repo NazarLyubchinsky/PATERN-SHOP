@@ -28,7 +28,7 @@ const Login = () => {
 					token: data.accessToken,
 					...data.user
 				}))
-				navigate('/home')
+				navigate('/')
 			})
 			.catch((err) => console.log(err.message))
 
