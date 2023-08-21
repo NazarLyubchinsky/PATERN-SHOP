@@ -8,7 +8,7 @@
 
 .form {
 	color: white;
-	max-width: 400px;
+	max-width: 420px;
 	width: 100%;
 	text-align: center;
 	display: flex;
@@ -31,6 +31,7 @@
 		border-bottom: 1px solid white;
 	}
 	&__btn {
+		margin-top: 15px;
 		margin-bottom: 30px;
 		padding: 10px 0;
 		background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
@@ -57,8 +58,11 @@
 		cursor: pointer;
 		z-index: 10;
 	}
-	&__create{
+	&__create {
 		text-align: right;
 		margin-bottom: 30px;
-	 }
+	}
+	&__error{
+		color: red;
+	}
 }

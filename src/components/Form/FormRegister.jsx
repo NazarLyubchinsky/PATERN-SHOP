@@ -11,15 +11,17 @@ const Form = () => {
 
 	const [status, setStatus] = useState(false)
 	const [email, setEmail] = useState('')
+	const [emailError, setEmailError] = useState(false);
+
 
 	const navigate = useNavigate()
 
 	const [eye, setEye] = useState(false)
 
 	const { user, setUser } = useContext(CustomContext)
-	
 
-console.log(user)
+
+	console.log(user)
 	const registerUser = (e) => {
 		e.preventDefault()
 
@@ -46,7 +48,7 @@ console.log(user)
 
 	return (
 		<div className={s.content}>
-			<form action="" className={s.form} onSubmit={registerUser}>
+			<form  className={s.form} onSubmit={registerUser}>
 
 				{
 					status && <p className={s.form__email} onClick={() => setStatus(false)}>{email}
@@ -56,14 +58,14 @@ console.log(user)
 
 				<h2 className={s.form__title}>
 					{
-						status ? 'Придумай пароль для входа на любом устройстве' : 'Регистрация'
+						status ? 'Create a password to access your account on any device' : 'Registration'
 					}
 				</h2>
 
 				{
 					status && <>
 						<div className={s.form__password}>
-							<input className={s.form__field} placeholder='Придумайте пароль' type={eye ? 'text' : 'password'} />
+							<input className={s.form__field} placeholder='Create a password' type={eye ? 'text' : 'password'} required />
 							<span className={s.form__eye} onClick={() => setEye(prev => !prev)}>
 								{
 									eye ? <AiFillEyeInvisible /> : <AiFillEye />
@@ -72,16 +74,35 @@ console.log(user)
 							</span>
 						</div>
 
-						<button className={s.form__btn} type='submit'>Создать аккаунт</button>
+						<button className={s.form__btn} type='submit'>Create Account</button>
 					</>
 				}
 
 				{
 					!status &&
 					<>
-						<input value={email} onChange={(e) => setEmail(e.target.value)} className={s.form__field} placeholder='Введите Email' type="text" />
-						<div onClick={() => setStatus(true)} className={s.form__btn}>Продолжить</div>
-						<Link to='/login'>У меня есть аккаунт</Link>
+						<input value={email}
+							onChange={(e) => {
+								setEmail(e.target.value);
+								setEmailError(false);
+							}}
+							className={s.form__field}
+							placeholder='Enter Email'
+							type="email"
+							required />
+						{emailError && <p className={s.form__error}>Enter a valid email.</p>}
+						<button type='submit'
+							onClick={() => {
+								if (email.trim() === '') {
+									setEmailError(true);
+								} else {
+									setEmailError(false);
+									setStatus(true);
+								}
+							}}
+							className={s.form__btn}
+							disabled={emailError}>Continue</button>
+						<Link to='/login'>I already have an account</Link>
 					</>
 				}
 
