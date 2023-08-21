@@ -40,7 +40,7 @@ const Form = () => {
 					token: data.accessToken,
 					...data.user
 				}))
-				navigate('/')
+				navigate('/home')
 			})
 			.catch((err) => console.log(err.message))
 
