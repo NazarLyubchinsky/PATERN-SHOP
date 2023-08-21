@@ -62,7 +62,13 @@
 		text-align: right;
 		margin-bottom: 30px;
 	}
-	&__error{
+	&__error {
 		color: red;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.form {
+		padding: 0 15px;
 	}
 }
