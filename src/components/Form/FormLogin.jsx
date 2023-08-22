@@ -12,33 +12,23 @@ const Login = () => {
 
 	const loginUser = (e) => {
 		e.preventDefault()
-		let newUser = {
-			email: e.target[0].value,
-			password: e.target[1].value
-		}
+		const email = e.target[0].value;
+		const password = e.target[1].value;
 
-		axios.post('/users', newUser)
-			.then(({ data }) => {
-				setUser(
-					// {
-					// 	// token: data.accessToken,
-					// 	// ...data.user
-					// }
-					data
-				)
+		axios.get('/users').then((response) => {
+			const users = response.data;
+			const user = users.find((u) => u.email === email);
 
-				localStorage.setItem('user', JSON.stringify(
-					// 	{
-					// 	// token: data.accessToken,
-					// 	// ...data.user
-					// }
-					data
-				))
-				navigate('/')
-			})
-			.catch((err) => console.log(err.message))
-
-	}
+			if (user && user.password === password) {
+				setUser(user);
+				localStorage.setItem('user', JSON.stringify(user));
+				navigate('/');
+			} else {
+				alert("Неправильний email або пароль");
+			}
+		})
+			.catch((err) => console.log(err.message));
+	};
 
 	return (
 		<div className={s.content}>
