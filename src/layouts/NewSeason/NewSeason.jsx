@@ -8,7 +8,7 @@ const NewSeason = () => {
 	return (
 		<section className={s.season}>
 			<div className={s.season__left}>
-				<h2 className={s.season__left_title}>СЕЗОН 2022/23</h2>
+				<h2 className={s.season__left_title}>SEASON 2022/23</h2>
 				<div className={s.season__left_cards}>
 					<div className={s.card}>
 						<div className={s.card__img}>
@@ -16,7 +16,7 @@ const NewSeason = () => {
 						</div>
 						<div className={s.card__text}>
 							<p >Louis XVI ATHOS</p>
-							<p>165 000 руб.  </p>
+							<p>7 000 $  </p>
 						</div>
 					</div>
 					<div className={s.card}>
@@ -25,7 +25,7 @@ const NewSeason = () => {
 						</div>
 						<div className={s.card__text}>
 							<p >Louis XVI ATHOS</p>
-							<p>165 000 руб.  </p>
+							<p>6 000$ </p>
 						</div>
 					</div>
 					<div className={s.card}>
@@ -34,7 +34,7 @@ const NewSeason = () => {
 						</div>
 						<div className={s.card__text}>
 							<p >Louis XVI ATHOS</p>
-							<p>165 000 руб.  </p>
+							<p>5 000$ </p>
 						</div>
 					</div>
 				</div>

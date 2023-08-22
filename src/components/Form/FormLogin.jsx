@@ -34,14 +34,14 @@ const Login = () => {
 	return (
 		<div className={s.content}>
 			<form action="" className={s.form} onSubmit={loginUser}>
-				<h2 className={s.form__title}>Вход на LOGOS</h2>
+				<h2 className={s.form__title}>Log in to LOGOS</h2>
 				<input placeholder='Email' type="email" className={s.form__field} />
 				<input placeholder='Пароль' type="password" className={s.form__field} />
 				<div className={s.form__create}>
-					<Link to='/register'>Создать аккаунт</Link>
+					<Link to='/register'>Create an account</Link>
 				</div>
 
-				<button className={s.form__btn} type='submit'>Войти</button>
+				<button className={s.form__btn} type='submit'>Log in</button>
 			</form>
 		</div>
 	);
