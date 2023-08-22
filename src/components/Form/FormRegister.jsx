@@ -29,22 +29,29 @@ const Form = () => {
 			email,
 			password: e.target[0].value
 		}
-		axios.post('/register', newUser)
+		axios.post('/users', newUser)
 			.then(({ data }) => {
-				setUser({
-					token: data.accessToken,
-					...data.user
-				})
+				// console.log(data);
+				// setUser({
+				// 	// token: data.accessToken,
+				// 	// ...data.user
 
-				localStorage.setItem('user', JSON.stringify({
-					token: data.accessToken,
-					...data.user
-				}))
+				// })
+				setUser(data)
+
+				localStorage.setItem('user', JSON.stringify(
+					// {
+					// 	// token: data.accessToken,
+					// 	// ...data.user
+					// }
+					data
+				))
 				navigate('/')
 			})
 			.catch((err) => console.log(err.message))
 
 	}
+
 
 	return (
 		<div className={s.content}>

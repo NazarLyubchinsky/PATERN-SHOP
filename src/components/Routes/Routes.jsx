@@ -15,12 +15,12 @@ const AppRoutes = () => {
 
 
 		<Routes>
-			{/* {user && user.email ? */}
-			<Route path={''} element={<Layout />} >
-				<Route path='/' element={<Home />} />
-			</Route>
-			:
-			{/* <Route path="/" element={<Register />} />} */}
+			{user && user.email ?
+				<Route path={''} element={<Layout />} >
+					<Route path='/' element={<Home />} />
+				</Route>
+				:
+				<Route path="/" element={<Register />} />}
 
 			<Route path="/login" element={<Login />} />
 			<Route path="/register" element={<Register />} />

@@ -17,17 +17,23 @@ const Login = () => {
 			password: e.target[1].value
 		}
 
-		axios.post('/login', newUser)
+		axios.post('/users', newUser)
 			.then(({ data }) => {
-				setUser({
-					token: data.accessToken,
-					...data.user
-				})
+				setUser(
+					// {
+					// 	// token: data.accessToken,
+					// 	// ...data.user
+					// }
+					data
+				)
 
-				localStorage.setItem('user', JSON.stringify({
-					token: data.accessToken,
-					...data.user
-				}))
+				localStorage.setItem('user', JSON.stringify(
+					// 	{
+					// 	// token: data.accessToken,
+					// 	// ...data.user
+					// }
+					data
+				))
 				navigate('/')
 			})
 			.catch((err) => console.log(err.message))
