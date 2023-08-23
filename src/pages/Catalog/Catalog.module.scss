@@ -1,0 +1,38 @@
+.catalog {
+	padding: 20px 0;
+	&__content {
+		display: flex;
+		column-gap: 20px;
+	}
+	&__aside {
+		width: 100%;
+		max-width: 250px;
+		height: 100vh;
+	}
+	&__right {
+		width: calc(100% - 250px);
+	}
+	&__crumbs {
+		display: flex;
+		gap: 5px;
+		font-size: 36px;
+		margin-top: 20px;
+		&_link{
+			transition: opacity .2s ease-in;
+			&:hover{
+				opacity: 0.6;
+			}
+		}
+	}
+	&__row {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+		padding: 0 15px;
+		margin-top: 30px;
+		.products__card {
+			width: calc(33.33333% - 20px);
+		}
+	}
+}

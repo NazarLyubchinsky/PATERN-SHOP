@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderMain from './HeaderMain'
+
 import SecondLine from './SecondLine'
 import TopLine from './TopLine'
 
@@ -14,7 +14,6 @@ const Header = () => {
 
 			}}>
 				<SecondLine />
-				<HeaderMain />
 			</div>
 		</div>
 	)

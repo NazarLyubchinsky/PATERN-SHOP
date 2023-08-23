@@ -1,24 +1,24 @@
 {
-  "users": [
-    {
-      "email": "nazar.muxal@gmail.com",
-      "password": "$2a$10$.23GTzI986apgtF80h7xJupe81g2/jVaDoE4LVIyhCzm2oOQG3QDS",
-      "id": 1
-    },
-    {
-      "email": "joh2n@mail.com",
-      "password": "$2a$10$gStufls2DdsTQnkK.2Dcj.a9FgQ8ZqfoLFNUVLRSRJ31xblWP9dfW",
-      "id": 2
-    },
-    {
-      "email": "nazar.xal@gmail.com",
-      "password": "$2a$10$nyBGtlKYJGkC1UK9YNLh6.sft.VO5A5FKKs.jrB/SzzkQJfT/VxbC",
-      "id": 3
-    },
-    {
-      "email": "joh22n@mail.com",
-      "password": "$2a$10$jkKJunYydsf4QJuWZWZg4.MnSYBmF4pn2.DjI28oZrZ/FGp9MxKny",
-      "id": 4
-    }
-  ]
+	"users": [
+		{
+			"email": "nazar.muxal@gmail.com",
+			"password": "$2a$10$.23GTzI986apgtF80h7xJupe81g2/jVaDoE4LVIyhCzm2oOQG3QDS",
+			"id": 1
+		},
+		{
+			"email": "joh2n@mail.com",
+			"password": "$2a$10$gStufls2DdsTQnkK.2Dcj.a9FgQ8ZqfoLFNUVLRSRJ31xblWP9dfW",
+			"id": 2
+		},
+		{
+			"email": "nazar.xal@gmail.com",
+			"password": "$2a$10$nyBGtlKYJGkC1UK9YNLh6.sft.VO5A5FKKs.jrB/SzzkQJfT/VxbC",
+			"id": 3
+		},
+		{
+			"email": "joh22n@mail.com",
+			"password": "$2a$10$jkKJunYydsf4QJuWZWZg4.MnSYBmF4pn2.DjI28oZrZ/FGp9MxKny",
+			"id": 4
+		}
+	]
 }

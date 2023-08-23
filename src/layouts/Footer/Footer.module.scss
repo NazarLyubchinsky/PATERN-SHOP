@@ -33,6 +33,12 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				cursor: pointer;
+				transition: all 0.5s ease-in;
+				&:hover {
+					background: rgb(96, 94, 94);
+					color: black;
+				}
 				&_link {
 					padding: 20px;
 					font-family: "PT Sans-Regular", Helvetica;
@@ -58,6 +64,7 @@
 				font-size: 14px;
 				font-weight: 400;
 				padding: 0 20px;
+				cursor: pointer;
 				transition: all 0.5s ease-in;
 				&:hover {
 					background: rgb(96, 94, 94);
@@ -147,7 +154,6 @@
 		gap: 20px;
 		padding: 15px;
 		&__row {
-		
 			&_wrapper {
 				flex-direction: column;
 			}

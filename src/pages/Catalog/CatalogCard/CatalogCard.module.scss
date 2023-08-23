@@ -1,0 +1,50 @@
+.catalog__card {
+	width: calc(25% - 23px);
+	.card {
+		background-color: #191b1c;
+		border-radius: 0 0 13px 13px;
+
+		&__img {
+			width: 100%;
+			min-height: 350px;
+			max-height: 350px;
+			object-fit: cover;
+			border-radius: 13px 13px 0 0;
+		}
+		&__text {
+			margin-top: 20px;
+			padding: 22px;
+			&_title {
+				width: 100%;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			&_btn {
+				display: flex;
+				justify-content: end;
+				align-items: center;
+				gap: 10px;
+				width: 100%;
+				cursor: pointer;
+			}
+		}
+		&__text p {
+			font-family: "Playfair Display-RegularRoman", Helvetica;
+			font-size: 27px;
+			line-height: 45px;
+			font-weight: 400;
+		}
+	}
+}
+
+@media only screen and (max-width: 1600px) {
+	.catalog__card{
+		width: calc(33.33% - 20px);
+	}
+}
+@media only screen and (max-width: 1200px) {
+	.catalog__card{
+		width: calc(50% - 15px);
+	}
+}

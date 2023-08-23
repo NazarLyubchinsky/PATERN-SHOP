@@ -3,6 +3,7 @@
 	justify-content: space-between;
 	&__left {
 		width: 50%;
+		padding: 90px 0;
 		&_title {
 			margin-top: 90px;
 			font-size: 36px;
@@ -27,6 +28,7 @@
 			justify-content: space-between;
 			padding: 0 80px;
 			.card {
+				width: 33.333%;
 				&__img {
 					width: 100%;
 					background-color: #191b1c;
@@ -42,7 +44,6 @@
 		}
 	}
 	&__right {
-		max-height: 730px;
 		width: 50%;
 		&_img {
 			background-image: url("../../assets/img/NewSeason/bgRight.png");
@@ -50,10 +51,6 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			height: 100%;
-			// img{
-			// 	width: 100%;
-			// 	height: 100%;
-			// }
 		}
 	}
 }
@@ -90,6 +87,10 @@
 		flex-direction: column;
 		&__left {
 			width: 100%;
+			padding: 30px 0;
+			&_title {
+				margin-top: 20px;
+			}
 		}
 		&__right {
 			display: none;
@@ -107,6 +108,10 @@
 					width: calc(50% - 25px);
 					&__img {
 						width: 100%;
+					}
+					&__text p {
+						font-size: 23px;
+						line-height: 34px;
 					}
 				}
 			}
