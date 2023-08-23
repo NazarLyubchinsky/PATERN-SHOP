@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Route, Routes, useParams } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Layout from '../../layouts/Layout'
 import Catalog from '../../pages/Catalog/Catalog'
 import Login from '../../pages/Login/Login'
@@ -7,7 +7,6 @@ import Register from '../../pages/Register/Register'
 import { CustomContext } from '../../utils/context/Context'
 import { ROUTES } from '../../utils/routes'
 import Home from '../Home/Home'
-import { CATEGORIES } from '../../utils/MenuCategories/MenuCategories'
 
 
 const AppRoutes = () => {
