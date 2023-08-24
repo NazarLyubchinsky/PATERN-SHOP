@@ -1,10 +1,11 @@
 import axios from '../../utils/axios/axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { CATEGORIES } from '../../utils/MenuCategories/MenuCategories'
+import { CATEGORIES } from '../../utils/MenuCategories/Categories'
 import Card from './CatalogCard/CatalogCard'
 
 import s from './Catalog.module.scss'
+import Preloader from '../../components/Preloader/Preloader'
 
 const Catalog = () => {
 	const [products, setProducts] = useState([])
@@ -20,7 +21,7 @@ const Catalog = () => {
 			<div className={s.container}>
 				<div className={s.catalog__content}>
 					<aside className={s.catalog__aside}>
-WD
+						WD
 					</aside>
 					<div className={s.catalog__right}>
 						<h2 className={s.catalog__crumbs}>
@@ -30,10 +31,13 @@ WD
 						</h2>
 						<div className={s.catalog__row}>
 							{
-								products.map((item) => (
-									<Card key={item.id} item={item} />
-								))
-							}
+								!products ? (
+									<Preloader /> 
+								) : (
+									products.map((item) => (
+										<Card key={item.id} item={item} />
+									))
+								)}
 						</div>
 					</div>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { CATEGORIES } from '../../utils/MenuCategories/MenuCategories'
+import { CATEGORIES } from '../../utils/MenuCategories/Categories'
 import { ROUTES } from '../../utils/routes'
 import s from './Footer.module.scss'
 
@@ -9,6 +9,11 @@ import s from './Footer.module.scss'
 const Footer = () => {
 
 	const navigate = useNavigate();
+
+	const handleCategoryClick = () => {
+		// Scroll to the top of the page
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	};
 	return (
 		<footer className={s.footer}>
 			<div className={s.footer__row}>
@@ -21,6 +26,7 @@ const Footer = () => {
 					{
 						CATEGORIES.map(i => (
 							<li key={i} className={s.list__item} onClick={() => {
+								handleCategoryClick()
 								navigate(`${ROUTES.CATALOG}/${i}`)
 							}}>
 								<Link className={s.list__item_link} to='/'>{i}</Link>

@@ -39,6 +39,12 @@
 					font-family: "Playfair Display-RegularRoman", Helvetica;
 					font-size: 18px;
 					font-weight: 400;
+					&_title {
+						max-width: 150px;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
 				}
 			}
 		}
