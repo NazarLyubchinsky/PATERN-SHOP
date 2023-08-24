@@ -6,7 +6,6 @@ import Preloader from '../../components/Preloader/Preloader';
 import s from './NewArrivals.module.scss'
 
 // images
-import WATCH from '../../assets/img/NewSeason/Watch.png'
 
 const NewArrivals = () => {
 
