@@ -1,13 +1,15 @@
 import React, { useContext } from 'react'
 import { Route, Routes } from 'react-router-dom'
+
 import Layout from '../../layouts/Layout'
 import Catalog from '../../pages/Catalog/Catalog'
+import Home from '../../pages/Home/Home'
 import Login from '../../pages/Login/Login'
 import Product from '../../pages/Product/Product'
 import Register from '../../pages/Register/Register'
+
 import { CustomContext } from '../../utils/context/Context'
 import { ROUTES } from '../../utils/routes'
-import Home from '../Home/Home'
 
 
 const AppRoutes = () => {

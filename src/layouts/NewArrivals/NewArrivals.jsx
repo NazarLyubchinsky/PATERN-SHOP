@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
-import { BsCart3 } from "react-icons/bs";
 import DataProducts from '../../utils/data/DataProducts';
 import Preloader from '../../components/Preloader/Preloader';
 
 import s from './NewArrivals.module.scss'
+import Card from '../../components/Card/Card';
 
 // images
 
@@ -22,21 +22,9 @@ const NewArrivals = () => {
 								(product) => product.category === 'Watches'
 							);
 							return watchProducts.slice(1, 9).map((product) => (
-								<div className={s.card} key={product.id}>
-									<div className={s.card__img}>
-										<img src={product.images} alt={product.title} />
-										{/* <img src={WATCH} alt={product.title} /> */}
-									</div>
-									<div className={s.card__text}>
-										<p className={s.card__text_title}>{product.title}</p>
-										<p>{product.price}</p>
-										<button className={`${s.card__text_btn} ${s.header__btn}`}>
-											В корзину
-											<BsCart3 size={30} />
-										</button>
-									</div>
-								</div>
-							));
+								<Card key={product.id} item={product} />
+							)
+							);
 						}
 					}}
 				</DataProductsMemo>

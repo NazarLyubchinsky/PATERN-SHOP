@@ -5,5 +5,5 @@ export const ROUTES = {
 	CATALOG: '/catalog',
 	LOGIN: '/login',
 	REGISTER: '/register',
-	PRODUCT: 'product',
+	PRODUCT: '/product',
 }

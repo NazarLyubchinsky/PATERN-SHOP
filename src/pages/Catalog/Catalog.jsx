@@ -2,7 +2,7 @@ import axios from '../../utils/axios/axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { CATEGORIES } from '../../utils/MenuCategories/Categories'
-import Card from './CatalogCard/CatalogCard'
+import Card from '../../components/Card/Card'
 
 import s from './Catalog.module.scss'
 import Preloader from '../../components/Preloader/Preloader'
