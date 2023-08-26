@@ -18,10 +18,12 @@ const Card = ({ item }) => {
 				<div className={s.card__text}>
 					<p className={s.card__text_title}>{item.title}</p>
 					<p>{item.price}</p>
-					<button className={`${s.card__text_btn} ${s.header__btn}`}>
-						В корзину
-						<BsCart3 size={30} />
-					</button>
+					<div className={s.card__text_button}>
+						<button className={`${s.card__text_btn} ${s.header__btn}`}>
+							В корзину
+							<BsCart3 size={30} />
+						</button>
+					</div>
 				</div>
 			</div>
 

@@ -1,0 +1,38 @@
+.addProduct {
+	padding: 40px 0;
+	&__content {
+		display: flex;
+		justify-content: center;
+	}
+	.form {
+		color: white;
+		max-width: 400px;
+		width: 100%;
+		text-align: center;
+		display: flex;
+		gap: 15px;
+		flex-direction: column;
+		&__title {
+			margin-bottom: 40px;
+		}
+		&__label {
+			text-align: left;
+			display: flex;
+			flex-direction: column;
+			input {
+				width: 100%;
+				border-bottom: 1px solid gray;
+			}
+		}
+		&__select {
+			margin: 10px 0 30px;
+			color: black;
+			height: 40px;
+			width: 170px;
+		}
+		&__block {
+			display: flex;
+			column-gap: 10px;
+		}
+	}
+}

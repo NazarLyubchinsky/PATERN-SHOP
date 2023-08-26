@@ -1,8 +1,7 @@
 import axios from '../../utils/axios/axios';
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import s from './Product.module.scss';
-import { ROUTES } from '../../utils/routes';
 import img from '../../assets/img/NewSeason/bgRight.png'
 import img2 from '../../assets/img/NewSeason/Watch.png'
 
@@ -80,7 +79,7 @@ const Product = () => {
 				<div className={s.product__info_bottom}>
 					<div className={s.purchase}>19 people purchased</div>
 
-					<button type='button' onClick={() => navigate(-1)}>Return to store</button>
+					<button className={s.btn} type='button' onClick={() => navigate(-1)}>Return to store</button>
 				</div>
 			</div>
 		</section>

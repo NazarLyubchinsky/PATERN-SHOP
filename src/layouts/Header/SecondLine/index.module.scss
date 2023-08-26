@@ -15,6 +15,7 @@
 		display: flex;
 		gap: 30px;
 	}
+
 	&__logo {
 		color: #ffffff;
 		font-size: 36px;
@@ -59,6 +60,9 @@
 	.secondLine {
 		height: 100px;
 		margin-top: 10px;
+		&__title {
+			width: 100%;
+		}
 		&__logo {
 			width: 100%;
 			font-size: 30px;

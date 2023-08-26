@@ -21,13 +21,20 @@
 				overflow: hidden;
 				text-overflow: ellipsis;
 			}
-			&_btn {
+			&_button {
+				width: 100%;
 				display: flex;
 				justify-content: flex-end;
+			}
+			&_btn {
+				display: flex;
 				align-items: center;
 				gap: 10px;
-				width: 100%;
 				cursor: pointer;
+				transition: opacity 0.2s ease-in;
+				&:hover {
+					opacity: 0.6;
+				}
 			}
 		}
 		&__text p {

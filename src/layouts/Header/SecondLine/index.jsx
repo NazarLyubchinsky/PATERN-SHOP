@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { CustomContext } from '../../../utils/context/Context'
 import { ROUTES } from '../../../utils/routes'
 // style
@@ -22,13 +22,15 @@ const SecondLine = () => {
 	return (
 		<section className={s.secondLine}>
 			<div className={s.secondLine__wrapper}>
-				<div className={s.secondLine__logo}>PATERN</div>
+				<div className={s.secondLine__title}>
+					<Link to='/' className={s.secondLine__logo}>PATERN</Link>
+				</div>
 				<div className={s.secondLine__navigation}>
 					<ul className={s.secondLine__list}>
 						<li className={s.secondLine__item}>
-							<NavLink to={ROUTES.HOME} style={({ isActive }) => ({
+							<NavLink to={ROUTES.ADD} style={({ isActive }) => ({
 								color: isActive ? 'greenyellow' : 'white'
-							})}>Liked</NavLink>
+							})}>Add product</NavLink>
 						</li>
 						<li className={s.secondLine__item}>
 							<NavLink to={ROUTES.CET} style={({ isActive }) => ({
