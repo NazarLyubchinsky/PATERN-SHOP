@@ -25,7 +25,7 @@ const Catalog = () => {
 					</aside>
 					<div className={s.catalog__right}>
 						<h2 className={s.catalog__crumbs}>
-							<Link className={s.catalog__crumbs_link} to='/'>Главная</Link>
+							<Link className={s.catalog__crumbs_link} to='/'>Home</Link>
 							<div>/</div>
 							<div>{CATEGORIES.find(item => item === category)}</div>
 						</h2>

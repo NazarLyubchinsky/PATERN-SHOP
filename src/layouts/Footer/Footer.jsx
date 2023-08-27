@@ -41,10 +41,10 @@ const Footer = () => {
 						<h3 className={s.footer__row_title}>Newsletter</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. I always live, now a tortor lectus, now nothing nibh.</p>
 					</div>
-					<div className={s.footer__row_newslette}>
-						<input placeholder='Your email' className={s.newslette__input} type="email" />
+					<form className={s.footer__row_newslette}>
+						<input placeholder='Your email' className={s.newslette__input} type="email"  required/>
 						<button className={s.newslette__btn}>SUBSCRIBE</button>
-					</div>
+					</form>
 				</div>
 			</div>
 		</footer>

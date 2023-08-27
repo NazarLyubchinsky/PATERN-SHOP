@@ -6,11 +6,13 @@
 	}
 	.form {
 		color: white;
-		max-width: 400px;
+		max-width: 600px;
 		width: 100%;
 		text-align: center;
 		display: flex;
 		gap: 15px;
+		padding: 0 15px;
+
 		flex-direction: column;
 		&__title {
 			margin-bottom: 40px;
@@ -22,6 +24,10 @@
 			input {
 				width: 100%;
 				border-bottom: 1px solid gray;
+				padding: 10px 0 10px 5px;
+			}
+			.error {
+				color: red;
 			}
 		}
 		&__select {
@@ -30,9 +36,17 @@
 			height: 40px;
 			width: 170px;
 		}
-		&__block {
-			display: flex;
-			column-gap: 10px;
+		&__btn {
+			.button {
+				cursor: pointer;
+				background-color: gray;
+				padding: 12px;
+				border-radius: 7px;
+				transition: opacity 0.2s ease-in;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
 		}
 	}
 }

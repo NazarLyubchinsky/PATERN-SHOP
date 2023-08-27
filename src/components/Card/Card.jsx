@@ -17,7 +17,7 @@ const Card = ({ item }) => {
 				<img onClick={handleImageClick} className={s.card__img} src={item.images} alt={item.title} />
 				<div className={s.card__text}>
 					<p className={s.card__text_title}>{item.title}</p>
-					<p>{item.price}</p>
+					<p>{item.price} USD</p>
 					<div className={s.card__text_button}>
 						<button className={`${s.card__text_btn} ${s.header__btn}`}>
 							В корзину

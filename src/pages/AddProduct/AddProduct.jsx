@@ -1,110 +1,113 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import {useForm} from "react-hook-form";
-import s from './AddProduct.module.scss'
-import axios from '../../utils/axios/axios'
-import { CATEGORIES } from '../../utils/MenuCategories/Categories'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import s from './AddProduct.module.scss';
+import axios from '../../utils/axios/axios';
+import { CATEGORIES } from '../../utils/MenuCategories/Categories';
 
 const AddProduct = () => {
 	const navigate = useNavigate();
+	const [selectedImage, setSelectedImage] = useState(null);
 
 	const {
 		register,
 		reset,
 		handleSubmit,
-		formState: {
-			errors
-		}
+		formState: { errors },
 	} = useForm({
-		mode: "onBlur"
-	})
-	const handleAddProduct = (data) => {
-		const newProduct = {
-			...data,
-			calories: data.protein * 4 + data.fats * 9 + data.carbohydrates * 4
+		mode: 'onBlur',
+	});
+
+	const handleAddProduct = async (data) => {
+		try {
+			if (!selectedImage) {
+				alert('Please select an image.');
+				return;
+			}
+
+			const base64Image = await convertImageToBase64(selectedImage);
+
+			const newProduct = {
+				...data,
+				images: base64Image,
+			};
+
+			await axios.post('/products', newProduct);
+			const selectedCategory = data.category;
+			if (selectedCategory) {
+				navigate(`/catalog/${selectedCategory}`);
+			} else {
+				navigate('/');
+			}
+			reset();
+		} catch (error) {
+			alert(error.message || 'An error occurred while adding the product.');
 		}
+	};
 
-		axios.post('/products', newProduct)
-			.then(() => {
-				navigate('/')
-				reset()
-			}).catch((err) => alert(err.message))
+	const handleImageChange = (event) => {
+		const file = event.target.files[0];
+		setSelectedImage(file);
+	};
 
-	}
+	const convertImageToBase64 = (image) => {
+		return new Promise((resolve) => {
+			const reader = new FileReader();
+			reader.onload = () => resolve(reader.result);
+			reader.readAsDataURL(image);
+		});
+	};
 	return (
 		<section className={s.addProduct}>
 			<div className={s.container}>
 				<div className={s.addProduct__content}>
 					<form noValidate className={s.form} onSubmit={handleSubmit(handleAddProduct)}>
-						<h2 className={s.form__title}>Добавление продукта</h2>
-
+						<h2 className={s.form__title}>Add Product</h2>
 						<label className={s.form__label} >
-							<span className={s.form__label_title}>Название</span>
+							<span className={s.form__label_title}>Title</span>
 							<input {...register('title', {
 								required: true
-							})} placeholder='Введите название' className={s.form__field} type="text" />
+							})} placeholder='Enter title' className={s.form__field} type="text" />
 						</label>
-
 						<label className={s.form__label} >
-							<span className={s.form__label_title}>Картинка</span>
-							<input  {...register('image', {
-								required: true
-							})} placeholder='Введите ссылку ' className={s.form__field} type="text" />
+							<span className={s.form__label_title}>Image</span>
+							<input
+								type="file"
+								accept="image/*"
+								onChange={handleImageChange}
+								className={s.form__field}
+							/>
 						</label>
-
-
 						<label className={s.form__label} >
-							<span className={s.form__label_title}>Описание</span>
+							<span className={s.form__label_title}>Description</span>
 							<input  {...register('description', {
 								required: true
-							})} placeholder='Введите описание' className={s.form__field} type="text" />
+							})} placeholder='Enter description' className={s.form__field} type="text" />
 						</label>
-
 						<div className={s.form__block}>
 							<label className={s.form__label}>
-								<span className={s.form__label_title}>Цена</span>
+								<span className={s.form__label_title}>Price</span>
 								<input  {...register('price', {
-									required: true
-								})} defaultValue='0' className={s.form__field} type="number" />
-							</label>
-
-							<label className={s.form__label} >
-								<span className={s.form__label_title}>Вес</span>
-								<input  {...register('weight', {
-									required: true
-								})} defaultValue='0' className={s.form__field} type="number" />
-							</label>
-						</div>
-
-						<div className={s.form__block}>
-							<label className={s.form__label} >
-								<span className={s.form__label_title}>Белки</span>
-								<input  {...register('protein', {
-									required: true
-								})} defaultValue='0' className={s.form__field} type="number" />
-							</label>
-							<label className={s.form__label} >
-								<span className={s.form__label_title}>Жиры</span>
-								<input  {...register('fats', {
-									required: true
-								})} defaultValue='0' className={s.form__field} type="number" />
-							</label>
-							<label className={s.form__label} >
-								<span className={s.form__label_title}>Углеводы</span>
-								<input  {...register('carbohydrates', {
-									required: true
-								})} defaultValue='0' className={s.form__field} type="number" />
+									required: true,
+									validate: (value) => {
+										if (value.startsWith('0')) {
+											return "Please remove leading zeros";
+										}
+										return true;
+									}
+								})} defaultValue='0' className={s.form__field} type="number" inputMode="numeric" pattern="[0-9]*" />
+								{errors.price && (
+									<p className={s.error}>{errors.price.message}</p>
+								)}
 							</label>
 						</div>
-
-
 						<label className={s.form__label}>
-							<span className={s.form__label_title}>Категория</span>
+							<span className={s.form__label_title}>Category</span>
 							<select  {...register('category', {
 								required: true
 							})} className={s.form__select}>
-								<option disabled value="">Выберите категорию</option>
+								<option disabled value="">Select category</option>
 								{
 									CATEGORIES.map((item) => (
 										<option key={item} value={item}>{item}</option>
@@ -112,15 +115,14 @@ const AddProduct = () => {
 								}
 							</select>
 						</label>
-
-						<button className={s.form__btn} type='submit'>Создать продукт</button>
-
+						<div className={s.form__btn}>
+							<button className={s.button} type='submit'>Create Product</button>
+						</div>
 					</form>
 				</div>
-
 			</div>
 		</section>
 	)
 }
 
-export default AddProduct
+export default AddProduct;
