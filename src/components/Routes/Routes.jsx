@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import Layout from '../../layouts/Layout'
 import AddProduct from '../../pages/AddProduct/AddProduct'
+import Basket from '../../pages/Basket/Basket'
 import Catalog from '../../pages/Catalog/Catalog'
 import Home from '../../pages/Home/Home'
 import Login from '../../pages/Login/Login'
@@ -24,6 +25,7 @@ const AppRoutes = () => {
 					<Route path={`${ROUTES.CATALOG}/:category`} element={<Catalog />} />
 					<Route path={`${ROUTES.PRODUCT}/:id`} element={<Product />} />
 					<Route path={`${ROUTES.ADD}`} element={<AddProduct />} />
+					<Route path={`${ROUTES.BASKET}`} element={<Basket />} />
 				</Route>
 				:
 				<Route path="/" element={<Register />} />}

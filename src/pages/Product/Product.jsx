@@ -61,7 +61,7 @@ const Product = () => {
 			</div>
 			<div className={s.product__info}>
 				<h1 className={s.product__info_title}>{product.title}</h1>
-				<div className={s.product__info_price}>{product.price}</div>
+				<div className={s.product__info_price}>{product.price} USD</div>
 				<div className={s.product__info_warranty}>Warranty: 1 year</div>
 				<div className={s.product__info_description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur in a corrupti totam! Architecto itaque doloremque corporis nisi nemo commodi reiciendis quis, quidem, impedit quasi autem delectus. Assumenda, magni at!</div>
 				<div className={s.product__info_actions}>

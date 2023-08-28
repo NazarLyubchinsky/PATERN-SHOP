@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import s from './Card.module.scss'
 import { BsCart3 } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../utils/routes';
+import { CustomContext } from '../../utils/context/Context';
 
 const Card = ({ item }) => {
 	const navigate = useNavigate()
@@ -10,6 +11,8 @@ const Card = ({ item }) => {
 	const handleImageClick = () => {
 		navigate(`${ROUTES.PRODUCT}/${item.id}`);
 	};
+
+	const { addBasket, basket } = useContext(CustomContext)
 	return (
 
 		<div className={s.catalog__card}>
@@ -19,16 +22,25 @@ const Card = ({ item }) => {
 					<p className={s.card__text_title}>{item.title}</p>
 					<p>{item.price} USD</p>
 					<div className={s.card__text_button}>
-						<button className={`${s.card__text_btn} ${s.header__btn}`}>
-							В корзину
-							<BsCart3 size={30} />
-						</button>
+						{
+							basket.findIndex(product => product.id === item.id) > -1
+								? <button type='button' className={`${s.card__text_btn} ${s.header__btn}`}>
+									Аdded
+									<BsCart3 size={20} />
+								</button>
+								: <button
+									onClick={() => addBasket(item)}
+									className={`${s.card__text_btn} ${s.header__btn}`}>
+									Basket
+									<BsCart3 size={30} />
+								</button>
+						}
 					</div>
 				</div>
 			</div>
 
 
-		</div>
+		</div >
 
 	);
 };

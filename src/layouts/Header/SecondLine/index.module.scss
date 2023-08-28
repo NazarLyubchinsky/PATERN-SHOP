@@ -33,12 +33,17 @@
 		align-items: center;
 	}
 	&__item,
-	&__user {
+	&__user,
+	&__basket {
 		transition: opacity 0.2s ease-in;
 	}
 	&__item:hover,
-	&__user:hover {
+	&__user:hover,
+	&__basket:hover {
 		opacity: 0.5;
+	}
+	&__basket {
+		cursor: pointer;
 	}
 }
 @media only screen and (max-width: 1500px) {
