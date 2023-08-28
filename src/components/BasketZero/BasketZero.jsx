@@ -33,11 +33,11 @@ const BasketZero = ({ show, setShow }) => {
 					</svg>
 
 				</span>
-				<h2 className={s.basketZero__title}>КОРЗИНА ПУСТАЯ</h2>
+				<h2 className={s.basketZero__title}>The basket is empty.</h2>
 				<button type='button'
 					onClick={() => navigate('/catalog')}
 					className={s.basketZero__button}>
-					Посмотреть меню
+					View the menu
 				</button>
 				<span
 					onClick={() => setShow(false)}

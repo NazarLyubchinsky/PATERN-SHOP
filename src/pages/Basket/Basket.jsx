@@ -21,6 +21,7 @@ const Basket = () => {
 				<ul className={s.basket__list}>
 					{basket.map((item) => (
 						<li key={item.id} className={s.basket__item}>
+							<img className={s.basket__item_img} src={item.images} alt="" />
 							<p onClick={()=>{
 									navigate(`${ROUTES.PRODUCT}/${item.id}`);
 							}} className={s.basket__item_title}>{item.title}</p>
