@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import BasketTotal from '../../components/BasketTotal/BasketTotal';
 import { CustomContext } from '../../utils/context/Context';
 import { ROUTES } from '../../utils/routes';
 import s from './Basket.module.scss'
@@ -22,9 +23,10 @@ const Basket = () => {
 					{basket.map((item) => (
 						<li key={item.id} className={s.basket__item}>
 							<img className={s.basket__item_img} src={item.images} alt="" />
-							<p onClick={()=>{
-									navigate(`${ROUTES.PRODUCT}/${item.id}`);
+							<p onClick={() => {
+								navigate(`${ROUTES.PRODUCT}/${item.id}`);
 							}} className={s.basket__item_title}>{item.title}</p>
+
 
 							<div className={s.basket__item_right}>
 								<div className={s.basket__item_count}>
@@ -46,6 +48,7 @@ const Basket = () => {
 						</li>
 					))}
 				</ul>
+				<BasketTotal />
 			</div>
 		</section>
 	);

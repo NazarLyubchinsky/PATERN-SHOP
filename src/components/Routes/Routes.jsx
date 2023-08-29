@@ -7,6 +7,7 @@ import Basket from '../../pages/Basket/Basket'
 import Catalog from '../../pages/Catalog/Catalog'
 import Home from '../../pages/Home/Home'
 import Login from '../../pages/Login/Login'
+import Orders from '../../pages/Orders/Orders'
 import Product from '../../pages/Product/Product'
 import Register from '../../pages/Register/Register'
 
@@ -26,6 +27,7 @@ const AppRoutes = () => {
 					<Route path={`${ROUTES.PRODUCT}/:id`} element={<Product />} />
 					<Route path={`${ROUTES.ADD}`} element={<AddProduct />} />
 					<Route path={`${ROUTES.BASKET}`} element={<Basket />} />
+					<Route path={`${ROUTES.ORDERS}`} element={<Orders/>}/>
 				</Route>
 				:
 				<Route path="/" element={<Register />} />}

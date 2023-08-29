@@ -188,6 +188,18 @@
 			&_current {
 				min-height: 400px;
 			}
+		}
+		&__info {
+			&_actions {
+				column-gap: unset;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 390px) {
+	.product {
+		&__images {
 			&_list {
 				flex-wrap: nowrap;
 				overflow-x: scroll;
@@ -213,11 +225,6 @@
 				.image {
 					min-width: 110px;
 				}
-			}
-		}
-		&__info {
-			&_actions {
-				column-gap: unset;
 			}
 		}
 	}

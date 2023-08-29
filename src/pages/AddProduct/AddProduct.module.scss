@@ -26,6 +26,9 @@
 				border-bottom: 1px solid gray;
 				padding: 10px 0 10px 5px;
 			}
+			input[type="file"] {
+				cursor: pointer;
+			}
 			.error {
 				color: red;
 			}
@@ -35,6 +38,7 @@
 			color: black;
 			height: 40px;
 			width: 170px;
+			cursor: pointer;
 		}
 		&__btn {
 			.button {

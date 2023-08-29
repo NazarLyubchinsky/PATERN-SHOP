@@ -28,13 +28,13 @@
 		padding: 20px 42px 20px 20px;
 		display: flex;
 		justify-content: space-between;
-		gap: 10px;
+		gap: 15px;
 		&_img {
 			min-width: 120px;
 			height: 120px;
 		}
 		&_title {
-			max-width: 250px;
+			max-width: 550px;
 			width: 100%;
 			white-space: nowrap;
 			overflow: hidden;
@@ -54,6 +54,7 @@
 				background: #5e8964;
 			}
 		}
+
 		&_right {
 			display: flex;
 			width: 50%;
@@ -64,6 +65,15 @@
 			display: flex;
 			align-items: center;
 			column-gap: 20px;
+		}
+	}
+}
+@media only screen and (max-width: 993px) {
+	.basket {
+		&__item {
+			&_title {
+				max-width: 250px;
+			}
 		}
 	}
 }
@@ -84,6 +94,7 @@
 
 @media only screen and (max-width: 576px) {
 	.basket {
+		padding: 20px 0 20px;
 		&__list {
 			flex-wrap: wrap;
 			flex-direction: row;
@@ -101,18 +112,51 @@
 			}
 			&_title {
 				max-width: 215px;
+				text-align: center;
 			}
 			&_del {
 				position: absolute;
-				top: 10px;
-				right: 10px;
+				top: 5px;
+				right: 5px;
 				background: none;
 			}
 			&_right {
 				display: flex;
 				flex-direction: column-reverse;
 				gap: 15px;
+				width: 100%;
+				text-align: center;
 			}
 		}
 	}
 }
+@media only screen and (max-width: 400px) {
+	.basket {
+		&__top{
+			padding: 0 10px;
+		}
+		&__list{
+			padding: 0 6px;
+		}
+		&__item {
+			flex-direction: row;
+			width: 100%;
+			min-height: 200px;
+			padding: 0 15px 20px 15px;
+			&_del {
+				position: unset;
+			}
+		
+			&_right {
+				position: absolute;
+				left: 0;
+				bottom: 10px;
+				flex-direction: row;
+				justify-content: space-around;
+			}
+			
+		}
+	}
+}
+
+

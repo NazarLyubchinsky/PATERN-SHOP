@@ -52,8 +52,15 @@ export const Context = (props) => {
 		if (localStorage.getItem('user') !== null) {
 			setUser(JSON.parse(localStorage.getItem('user')))
 		}
+		if (localStorage.getItem('basket') !== null) {
+			setBasket(JSON.parse(localStorage.getItem('basket')))
+		}
 
 	}, [])
+
+	useEffect(() => {
+		localStorage.setItem('basket', JSON.stringify(basket))
+	}, [basket])
 
 	const value = {
 		user,

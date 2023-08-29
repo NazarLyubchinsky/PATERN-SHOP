@@ -116,7 +116,7 @@
 		&__list {
 			margin-top: 60px;
 			flex-wrap: nowrap;
-			overflow: scroll;
+			overflow-x: scroll;
 			padding-bottom: 20px;
 			&::-webkit-scrollbar {
 				height: 3px;

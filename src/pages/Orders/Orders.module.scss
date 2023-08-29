@@ -1,0 +1,55 @@
+.orders {
+	&__content {
+		gap: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+	&__contact {
+		background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+		border-radius: 10px;
+		padding: 30px 30px 57px;
+		&_btns {
+			display: flex;
+			gap: 10px;
+			margin: 10px 0;
+			.orders__contact_btn {
+				cursor: pointer;
+				background: grey;
+				padding: 5px;
+				border-radius: 5px;
+				transition: background .4s ease-in;
+				&:hover{
+					background: rgb(181, 179, 179);
+				}
+				
+			}
+		}
+		&_label {
+			display: flex;
+			margin-top: 30px;
+			column-gap: 15px;
+			&:nth-child(6) {
+				.orders__contact_input {
+					width: 100%;
+				}
+			}
+		}
+		&_title {
+			font-family: "Gilroy", sans-serif;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 22px;
+		}
+		&_input {
+			width: 50%;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 10px;
+			padding: 20px 30px;
+			font-family: "Gilroy", sans-serif;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 19px;
+			background: transparent;
+		}
+	}
+}

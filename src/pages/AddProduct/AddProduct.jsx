@@ -73,6 +73,7 @@ const AddProduct = () => {
 						<label className={s.form__label} >
 							<span className={s.form__label_title}>Image</span>
 							<input
+						
 								type="file"
 								accept="image/*"
 								onChange={handleImageChange}
