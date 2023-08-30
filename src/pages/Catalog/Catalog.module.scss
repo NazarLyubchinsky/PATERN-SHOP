@@ -8,6 +8,26 @@
 		width: 100%;
 		max-width: 250px;
 		height: 100vh;
+		background-color: #191b1c;
+		display: flex;
+		flex-direction: column;
+		padding: 40px 20px;
+		row-gap: 30px;
+		&_wrapper {
+			border: 1px solid grey;
+			border-radius: 4px;
+		}
+		&_label {
+			width: 100%;
+		}
+		&_select {
+			color: grey;
+			width: 100%;
+			height: 50px;
+		}
+		&_item {
+			color: black !important;
+		}
 	}
 	&__right {
 		width: calc(100% - 250px);
@@ -17,9 +37,9 @@
 		gap: 5px;
 		font-size: 36px;
 		margin-top: 20px;
-		&_link{
-			transition: opacity .2s ease-in;
-			&:hover{
+		&_link {
+			transition: opacity 0.2s ease-in;
+			&:hover {
 				opacity: 0.6;
 			}
 		}

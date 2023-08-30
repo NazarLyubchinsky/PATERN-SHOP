@@ -1,4 +1,16 @@
 .orders {
+	&__back {
+		display: flex;
+		justify-content: center;
+		&_btn {
+			font-size: 30px;
+			cursor: pointer;
+			transition: opacity 0.2s ease-in;
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
 	&__content {
 		gap: 10px;
 		display: flex;
@@ -12,18 +24,17 @@
 			display: flex;
 			gap: 10px;
 			margin: 10px 0;
-			.orders__contact_btn {
-				cursor: pointer;
-				background: grey;
-				padding: 5px;
-				border-radius: 5px;
-				transition: background .4s ease-in;
-				&:hover{
-					background: rgb(181, 179, 179);
-				}
-				
+
+			.active_btn {
+				color: black;
 			}
 		}
+		&_checkbox {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+		}
+
 		&_label {
 			display: flex;
 			margin-top: 30px;
@@ -34,11 +45,19 @@
 				}
 			}
 		}
+		&_checkbox {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			gap: 9px;
+		}
+
 		&_title {
 			font-family: "Gilroy", sans-serif;
 			font-weight: 700;
 			font-size: 18px;
 			line-height: 22px;
+			margin-bottom: 10px;
 		}
 		&_input {
 			width: 50%;
@@ -50,6 +69,52 @@
 			font-size: 16px;
 			line-height: 19px;
 			background: transparent;
+		}
+		.orders__contact_btn {
+			cursor: pointer;
+			background: grey;
+			padding: 7px;
+			border-radius: 5px;
+		}
+		.hover {
+			padding: 12px;
+			transition: background 0.3s ease-in;
+			&:hover {
+				background: rgba(255, 255, 255, 0.1);
+			}
+		}
+	}
+}
+@media only screen and (max-width: 992px) {
+	.orders {
+		&__contact {
+			padding: 25px;
+		}
+	}
+}
+@media only screen and (max-width: 768px) {
+	.orders {
+		&__contact {
+			padding: 13px;
+
+			&_label {
+				flex-direction: column;
+				gap: 15px;
+				margin-top: 15px;
+			}
+			&_input {
+				width: 100%;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 520px) {
+	.orders {
+		&__contact {
+			padding: 13px;
+			&_btns {
+				flex-direction: column;
+			}
 		}
 	}
 }

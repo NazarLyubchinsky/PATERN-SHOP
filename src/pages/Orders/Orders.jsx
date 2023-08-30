@@ -1,135 +1,146 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-// import OrderSelect from "../Catalog/OrderSelect/OrderSelect";
-// import OrdersSelect from "../../components/OrdersSelect/OrdersSelect";
-// import OrdersRadio from "../../components/OrdersRadio/OrdersRadio";
 import { useForm } from "react-hook-form";
 import s from './Orders.module.scss'
+import OrdersSelect from '../../components/OrdersSelect/OrdersSelect';
+import OrdersRadio from '../../components/OrdersRadio/OrdersRadio';
 
 const Orders = () => {
 	const {
-		// reset,
-		// handleSubmit,
-		register
-	} = useForm(
+		reset,
+		handleSubmit,
+		register,
+	} = useForm();
+	const navigate = useNavigate();
+	const [delivery, setDelivery] = useState('delivery');
+	const [buy, setBuy] = useState('online');
 
-		)
-	const navigate = useNavigate()
-	const [delivery, setDelivery] = useState('delivery')
-	const [buy, setBuy] = useState('online')
-	const [time, setTime] = useState('time1')
+
+
+	const onSubmit = (data) => {
+		// Handle form submission here
+		alert('Successfully, look console')
+		console.log(data);
+		reset();
+	};
+
 	return (
 		<div className={s.orders}>
 			<div className={s.container}>
 				<div className={s.orders__content}>
-					<button className={s.orders__back} onClick={() => navigate(-1)}>
-						в корзину
-					</button>
-					{/* <Title title='Оформление заказа' /> */}
-					<div className={s.orders__contact}>
-						<h3 className={s.orders__contact_title}>
-							1. Контактная информация
-						</h3>
-						<label className={s.orders__contact_label}>
-							<input type="text" className={s.orders__contact_input} placeholder='Имя*' {...register('name')} />
-							<input type="text" className={s.orders__contact_input} placeholder='Телефон*'{...register('number')} />
-						</label>
+					<div className={s.orders__back}>
+						<button className={s.orders__back_btn} onClick={() => navigate(-1)}>
+							Back to Cart
+						</button>
 					</div>
-					<div className={s.orders__contact}>
-						<h3 className={s.orders__contact_title}>
-							1. Контактная информация
-						</h3>
-						<div className={s.orders__contact_btns}>
-							<button className={s.orders__contact_btn} onClick={() => setDelivery('delivery')}>
-								Доставка
-							</button>
-							<button className={s.orders__contact_btn} onClick={() => setDelivery('pickup')}>
-								Самовывоз
-							</button>
-						</div>
-						{
-							delivery === 'delivery' ? <>
-								<h3 className={s.orders__contact_title}>
-									Адрес доставки
-								</h3>
-								<label className={s.orders__contact_label}>
-									<input type="text" className={s.orders__contact_input} placeholder='Укажите улицу*' {...register('street')} />
-									<input type="text" className={s.orders__contact_input} placeholder='Номер дома*'{...register('home')} />
-								</label>
-								<label className={s.orders__contact_label}>
-									<input type="text" className={s.orders__contact_input} placeholder='№ квартиры/офиса' {...register('numberHome')} />
-									<input type="text" className={s.orders__contact_input} placeholder='Подъезд' {...register('Entranceway')} />
-									<input type="text" className={s.orders__contact_input} placeholder='Этаж' {...register('Floor')} />
-
-								</label>
-								<label className={s.orders__contact_label}>
-									<input type="text" className={s.orders__contact_input} placeholder='Комментарий' {...register('comment')} />
-								</label>
-							</> : <>
-								<h3 className={s.orders__contact_title}>
-									Выберите ресторан
-								</h3>
-								{/* <OrdersSelect /> */}
-							</>
-						}
+					{/* <Title title='Order Placement' /> */}
+					<form onSubmit={handleSubmit(onSubmit)}>
 						<div className={s.orders__contact}>
-							<h3 className={s.orders__contact_title}> Оплатить
+							<h3 className={s.orders__contact_title}>
+								1. Contact Information
 							</h3>
-							<div className={s.orders__contact_btns}>
-								<button className={s.orders__contact_btn} onClick={() => setBuy('online')}>
-									Оплата онлайн
-								</button>
-								<button className={s.orders__contact_btn} onClick={() => setBuy('card')}>
-									Курьеру картой
-								</button>
-								<button className={s.orders__contact_btn} onClick={() => setBuy('nal')}>
-									Самовывоз
-								</button>
-							</div>
-							{
-								buy === 'online' ?
-									<input type="text" className={s.orders__contact_input} placeholder='online' {...register('online')} />
-									: buy === 'card' ? <input type="text" className={s.orders__contact_input} placeholder='card number' />
-										: <input type="text" className={s.orders__contact_input} placeholder='Сдача с' {...register('numberCard')} />
-
-							}
+							<label className={s.orders__contact_label}>
+								<input type="text" required className={s.orders__contact_input} placeholder='Name*' {...register('name')} />
+								<input type="text" required className={s.orders__contact_input} placeholder='Phone*' {...register('number')} />
+							</label>
 						</div>
 						<div className={s.orders__contact}>
 							<h3 className={s.orders__contact_title}>
-								3. Оплатить
+								2. Delivery Options
 							</h3>
 							<div className={s.orders__contact_btns}>
-								<button className={s.orders__contact_btn} onClick={() => setTime('time1')}>
-									В ближайшее время
-								</button>
-								<button className={s.orders__contact_btn} onClick={() => setTime('time2')}>
-									Ко времени
-								</button>
-								<input type="number" className={s.orders__contact_input} placeholder='Укажите время' {...register('time')} />
+								<div className={`${s.orders__contact_btn} ${delivery === 'delivery' ? s.active_btn : ''}`}
+									onClick={() => setDelivery('delivery')}>
+									Delivery
+								</div>
+								<div className={`${s.orders__contact_btn} ${delivery === 'pickup' ? s.active_btn : ''}`}
+									onClick={() => setDelivery('pickup')}>
+									Pickup
+								</div>
 							</div>
 							{
-								time === 'time1' ?
-									<input type="number" className={s.orders__contact_input} placeholder='Кол-во персон' {...register('person')} />
-									: <input type="number" className={s.orders__contact_input} placeholder='Кол-во персон' {...register('')} />
+								delivery === 'delivery' ? <>
+									<h3 className={s.orders__contact_title}>
+										Delivery Address
+									</h3>
+									<label className={s.orders__contact_label}>
+										<input type="text" required className={s.orders__contact_input} placeholder='Street*' {...register('street')} />
+										<input type="text" required className={s.orders__contact_input} placeholder='House Number*' {...register('home')} />
+									</label>
+									<label className={s.orders__contact_label}>
+										<input type="text" required className={s.orders__contact_input} placeholder='Apartment/Office No.' {...register('numberHome')} />
+										<input type="text" required className={s.orders__contact_input} placeholder='Entrance' {...register('Entranceway')} />
+										<input type="text" required className={s.orders__contact_input} placeholder='Floor' {...register('Floor')} />
+									</label>
+									<label className={s.orders__contact_label}>
+										<input type="text" required className={s.orders__contact_input} placeholder='Comment' {...register('comment')} />
+									</label>
+								</> : <>
+									<h3 className={s.orders__contact_title}>
+										Choose Store
+									</h3>
+									<OrdersSelect />
+								</>
 							}
-							<h3 className={s.orders__contact_title}>
-								Хотите мы позвоним?
-							</h3>
-							{/* <OrdersRadio /> */}
-						</div>
-						<div className={s.orders__contact}>
-							<p className={s.orders__contact}>
-								Я согласен на обработку моих перс. данных в соответствии с Условиями
-							</p>
-							<button className={s.orders__contact_btn} type='submit'>
-								Оформить заказ
-							</button>
-						</div>
+							<div className={s.orders__contact}>
+								<h3 className={s.orders__contact_title}> Payment
+								</h3>
+								<div className={s.orders__contact_btns}>
+									<div className={`${s.orders__contact_btn} ${buy === 'online' ? s.active_btn : ''}`}
+										onClick={() => setBuy('online')}>
+										Pay Online
+									</div>
+									<div className={`${s.orders__contact_btn} ${buy === 'card' ? s.active_btn : ''}`}
+										onClick={() => setBuy('card')}>
+										Card Payment to Courier
+									</div>
+									<div className={`${s.orders__contact_btn} ${buy === 'cash' ? s.active_btn : ''}`}
+										onClick={() => setBuy('cash')}>
+										Cash on Pickup
+									</div>
+								</div>
+								{
+									buy === 'online' ?
+										<input type="text" required className={s.orders__contact_input} placeholder='online payment' {...register('online')} />
+										: buy === 'card' ? <input type="text" required className={s.orders__contact_input} placeholder='card number' />
+											: <input type="text" required className={s.orders__contact_input} placeholder='Change from' {...register('numberCard')} />
+								}
+							</div>
+							<div className={s.orders__contact}>
+								<h3 className={s.orders__contact_title}>
+									Would You Like Us to Call?
+								</h3>
+								<OrdersRadio />
+							</div>
+							<div className={s.orders__contact}>
+								<label className={s.orders__contact_label} >
+									<div className={s.orders__contact_checkbox} >
+										<input
+											type='checkbox'
+											required
+											value='I agree to the processing of my personal data in accordance with the Terms'
+											{...register('agree')}
+											className={s.orders__contact_hidden}
+										/>
+										<span className={s.orders__contact_checkmark}>	I agree to the processing of my personal data in accordance with the Terms</span>
 
-					</div>
-				</div>
+									</div>
+								</label>
+								<div style={{
+									display: 'flex',
+									justifyContent: 'center',
+									marginTop: '15px'
+								}}>
+									<button className={`${s.orders__contact_btn} ${s.hover}`} type='submit' style={{
+									}}>
+										Place Order
+									</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div >
 			</div >
-
 		</div >
 	);
 };
