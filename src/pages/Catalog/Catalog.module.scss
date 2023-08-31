@@ -13,22 +13,15 @@
 		flex-direction: column;
 		padding: 40px 20px;
 		row-gap: 30px;
-		&_wrapper {
-			border: 1px solid grey;
+		.demo-control {
+			// border: 1px solid gray;
 			border-radius: 4px;
 		}
-		&_label {
-			width: 100%;
-		}
-		&_select {
-			color: grey;
-			width: 100%;
-			height: 50px;
-		}
-		&_item {
-			color: black !important;
+		.demo-select {
+			color: #fff;
 		}
 	}
+
 	&__right {
 		width: calc(100% - 250px);
 	}

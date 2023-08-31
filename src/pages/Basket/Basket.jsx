@@ -38,7 +38,7 @@ const Basket = () => {
 								</div>
 
 								<p className={s.basket__item_price}>
-									{parseFloat(item.price.replace(/,/g, '')) * item.count} USD
+									{item.price * item.count} USD
 								</p>
 
 								<button type='button' onClick={() => delBasket(item.id)} className={s.basket__item_del}>X</button>

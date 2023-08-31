@@ -23,7 +23,7 @@ const BasketTotal = () => {
 					Total: {
 
 						basket.reduce((acc, rec) =>
-							acc + parseFloat(rec.price.replace(/,/g, '')) * rec.count
+							acc + rec.price * rec.count
 							, 0)
 					} USD
 				</p>: ''

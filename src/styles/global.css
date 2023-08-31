@@ -9,7 +9,6 @@ body {
 	font-weight: 500;
 	/* padding-bottom: 20px; */
 	font-family: "Post No Bills Jaffna-Bold", Helvetica;
-
 }
 
 h1,
@@ -27,6 +26,8 @@ p {
 
 * {
 	box-sizing: border-box;
+	border-color: none;
+
 }
 
 img {
