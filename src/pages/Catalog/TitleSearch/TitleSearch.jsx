@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import debounce from "@material-ui/core/utils/debounce";
+// import debounce from "@material-ui/core/utils/debounce";
 import s from '../Catalog.module.scss'
 
 // marial ui
@@ -23,7 +23,9 @@ function TitleSearch({ title, setTitle }) {
 				autoComplete="off"
 			>
 				<TextField 
-				color='primary' defaultValue={title} onChange={debounce(handleChange, 500)} className={s["demo-menuitem"]} id="outlined-basic" label={'Название'} variant="outlined" />
+				color='primary' defaultValue={title}
+				//  onChange={debounce(handleChange, 500)}
+				 className={s["demo-menuitem"]} id="outlined-basic" label={'Название'} variant="outlined" />
 			</Box>
 		</ThemeProvider>
 	);
