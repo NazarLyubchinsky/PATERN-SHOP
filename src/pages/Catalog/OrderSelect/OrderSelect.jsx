@@ -5,12 +5,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import s from '../Catalog.module.scss';
 
-// marial ui
+// Material UI
 import { ThemeProvider } from '@mui/material/styles';
 import { MaterialUi } from '../../../components/MaterialUi/MaterialUi';
-
-
-
 
 function OrderSelect({ order, setOrder }) {
 
@@ -28,10 +25,11 @@ function OrderSelect({ order, setOrder }) {
 						id="demo-simple-select"
 						value={order}
 						onChange={handleChange}
+						
 					>
-						<MenuItem className={s["demo-menuitem"]} value={'default'}>По умолчанию</MenuItem>
-						<MenuItem className={s["demo-menuitem"]} value={'desc'}>По убыванию</MenuItem>
-						<MenuItem className={s["demo-menuitem"]} value={'asc'}>По возрастанию</MenuItem>
+						<MenuItem className={s["demo-menuitem"]} value={'default'}>Default</MenuItem>
+						<MenuItem className={s["demo-menuitem"]} value={'desc'}>Descending</MenuItem>
+						<MenuItem className={s["demo-menuitem"]} value={'asc'}>Ascending</MenuItem>
 					</Select>
 				</FormControl>
 			</Box>
@@ -39,4 +37,4 @@ function OrderSelect({ order, setOrder }) {
 	);
 }
 
-export default OrderSelect
+export default OrderSelect;

@@ -126,6 +126,7 @@
 }
 @media only screen and (max-width: 500px) {
 	.season {
+		display: none;
 		&__left {
 			width: 100%;
 			&_cards {

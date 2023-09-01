@@ -2,7 +2,7 @@
 	width: calc(25% - 23px);
 	.card {
 		background-color: #191b1c;
-		border-radius: 0 0 13px 13px;
+		border-radius: 13px 13px 13px 13px;
 
 		&__img {
 			width: 100%;
@@ -27,11 +27,13 @@
 				justify-content: flex-end;
 			}
 			&_btn {
+				font-size: 18px;
 				display: flex;
 				align-items: center;
 				gap: 10px;
 				cursor: pointer;
 				transition: opacity 0.2s ease-in;
+				min-height: 32px;
 				&:hover {
 					opacity: 0.6;
 				}
@@ -56,6 +58,7 @@
 		width: calc(50% - 15px);
 	}
 }
+
 @media only screen and (max-width: 567px) {
 	.catalog__card {
 		width: 100%;

@@ -1,0 +1,37 @@
+.list {
+	display: flex;
+	gap: 32px;
+}
+.item {
+	cursor: pointer;
+	transition: opacity 0.2s ease-in;
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+.link {
+	color: var(--dark-sea);
+	font-size: 20px;
+}
+.list__modal {
+	flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+	.list {
+		display: none;
+	}
+	.list__modal {
+		display: flex;
+	}
+}
+
+.link.active {
+	color: var(--violet);
+}
+
+
+.link__color {
+	color: #fff;
+}

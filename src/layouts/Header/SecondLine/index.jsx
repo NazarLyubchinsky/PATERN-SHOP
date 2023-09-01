@@ -4,6 +4,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import BasketZero from '../../../components/BasketZero/BasketZero'
 import { CustomContext } from '../../../utils/context/Context'
 import { ROUTES } from '../../../utils/routes'
+import BurgerModal from '../BurgerModal/BurgerModal'
 // style
 import s from './index.module.scss'
 
@@ -37,14 +38,14 @@ const SecondLine = () => {
 							})}>Add product</NavLink>
 						</li>
 						<li className={s.secondLine__item}>
-							<NavLink to={ROUTES.CET} style={({ isActive }) => ({
+							<NavLink to={'/catalog/all'} style={({ isActive }) => ({
 								color: isActive ? 'greenyellow' : 'white'
-							})}>	Personal account</NavLink>
+							})}>Catalog</NavLink>
 						</li>
 						<li className={s.secondLine__item}>
 							<NavLink to={ROUTES.CETE} style={({ isActive }) => ({
 								color: isActive ? 'greenyellow' : 'white',
-							})}>Settings</NavLink>
+							})}>Personal information</NavLink>
 						</li>
 
 					</ul>
@@ -68,7 +69,7 @@ const SecondLine = () => {
 					<div className={s.secondLine__basket} onClick={() => {
 						if (basket.length) {
 							navigate('/basket')
-						} else{
+						} else {
 							setShow(true)
 						}
 					}}>
@@ -80,6 +81,7 @@ const SecondLine = () => {
 						{basket.length}
 					</div>
 					<BasketZero show={show} setShow={setShow} />
+				<BurgerModal />
 				</div>
 			</div>
 		</section >

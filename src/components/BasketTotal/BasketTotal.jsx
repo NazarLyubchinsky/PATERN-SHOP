@@ -7,7 +7,6 @@ import s from './BasketTotal.module.scss'
 const BasketTotal = () => {
 	const navigate = useNavigate()
 	const { basket } = useContext(CustomContext)
-	console.log(basket)
 	const hundleCreate = () => {
 		if (basket.length) {
 			navigate('/orders')

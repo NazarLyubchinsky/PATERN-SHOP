@@ -17,6 +17,7 @@ import { ROUTES } from '../../utils/routes'
 
 const AppRoutes = () => {
 	const { user } = useContext(CustomContext);
+	
 	return (
 
 		<Routes>

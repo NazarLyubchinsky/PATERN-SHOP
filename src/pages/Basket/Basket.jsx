@@ -27,7 +27,6 @@ const Basket = () => {
 								navigate(`${ROUTES.PRODUCT}/${item.id}`);
 							}} className={s.basket__item_title}>{item.title}</p>
 
-
 							<div className={s.basket__item_right}>
 								<div className={s.basket__item_count}>
 									<button type='button' onClick={() => minusOneBasket(item.id)} className={s.basket__item_minus}>-</button>
@@ -42,9 +41,7 @@ const Basket = () => {
 								</p>
 
 								<button type='button' onClick={() => delBasket(item.id)} className={s.basket__item_del}>X</button>
-
 							</div>
-
 						</li>
 					))}
 				</ul>

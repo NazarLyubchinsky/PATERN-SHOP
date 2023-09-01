@@ -14,11 +14,13 @@
 		padding: 40px 20px;
 		row-gap: 30px;
 		.demo-control {
-			// border: 1px solid gray;
 			border-radius: 4px;
 		}
 		.demo-select {
 			color: #fff;
+			& svg {
+				fill: #fff;
+			}
 		}
 	}
 
@@ -46,6 +48,83 @@
 		margin-top: 30px;
 		.products__card {
 			width: calc(33.33333% - 20px);
+		}
+	}
+}
+@media only screen and (max-width: 992px) {
+	.catalog {
+		&__crumbs {
+			margin-top: 10px;
+			padding: 0 20px;
+			font-size: 24px;
+		}
+
+		&__content {
+			flex-direction: column;
+		}
+		&__aside {
+			flex-direction: row;
+			height: 100%;
+			max-width: 100%;
+			gap: 20px;
+			justify-content: space-between;
+			&_item {
+				width: 33.33%;
+			}
+		}
+		&__right {
+			width: 100%;
+		}
+		&__row {
+			margin-top: 15px;
+			.products__card {
+				width: calc(50% - 20px);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.catalog {
+		&__aside {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 10px;
+			padding: 20px 15px;
+
+			&_item {
+				width: 100%;
+				&:nth-child(3) {
+					grid-column: span 2;
+				}
+			}
+		}
+		&__row {
+			flex-wrap: nowrap;
+			overflow-x: scroll;
+			padding: 0 10px 20px 10px; 
+			&::-webkit-scrollbar {
+				height: 3px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background-color: #f1f1f1;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: #888;
+				border-radius: 5px;
+			}
+
+			&::-webkit-scrollbar-thumb:hover {
+				background-color: #555;
+			}
+			.products__card {
+				width: calc(50% - 20px);
+			}
+		}
+		.demo-select {
+			max-height: 40px;
 		}
 	}
 }

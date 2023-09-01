@@ -1,29 +1,23 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import { useNavigate, useParams } from "react-router-dom";
 import { CATEGORIES } from '../../../utils/MenuCategories/Categories';
 import s from '../Catalog.module.scss'
 
-// marial ui
+// Material UI
+import Box from '@mui/material/Box';
+import Select from '@mui/material/Select';
+import FormControl from '@mui/material/FormControl';
 import { ThemeProvider } from '@mui/material/styles';
 import { MaterialUi } from '../../../components/MaterialUi/MaterialUi';
 
-
-
 function CategorySelect() {
-
 	const navigate = useNavigate()
-
 	const { category } = useParams()
 
 	const handleChange = (e) => {
 		navigate(`/catalog/${e.target.value}`)
 	};
-
-
 
 	return (
 		<ThemeProvider theme={MaterialUi} >
@@ -38,7 +32,7 @@ function CategorySelect() {
 					>
 						<MenuItem
 							className={s["demo-menuitem"]}
-							value={'all'}>Все категории</MenuItem>
+							value={'all'}>All Categories</MenuItem>
 						{
 							CATEGORIES.map((item) => (
 								<MenuItem className={s.catalog__aside_item} key={item} value={item}>{item}</MenuItem>
@@ -51,4 +45,4 @@ function CategorySelect() {
 	);
 }
 
-export default CategorySelect
+export default CategorySelect;

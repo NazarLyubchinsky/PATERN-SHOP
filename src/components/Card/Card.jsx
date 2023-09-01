@@ -24,7 +24,7 @@ const Card = ({ item }) => {
 					<div className={s.card__text_button}>
 						{
 							basket.findIndex(product => product.id === item.id) > -1
-								? <button type='button' className={`${s.card__text_btn} ${s.header__btn}`}>
+								? <button style={{ opacity: '0.6',cursor: 'not-allowed'}} type='button' className={`${s.card__text_btn} ${s.header__btn}`}>
 									Аdded
 									<BsCart3 size={20} />
 								</button>

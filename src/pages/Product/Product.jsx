@@ -1,9 +1,11 @@
+
 import axios from '../../utils/axios/axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import s from './Product.module.scss';
 import img from '../../assets/img/NewSeason/bgRight.png'
 import img2 from '../../assets/img/NewSeason/Watch.png'
+import { CustomContext } from '../../utils/context/Context';
 
 const Product = () => {
 	const [product, setProduct] = useState({});
@@ -20,10 +22,17 @@ const Product = () => {
 		setCurrentImage(''); // Clear currentImage when changing products
 	}, [id]);
 
+	const { addBasket, basket } = useContext(CustomContext)
+	const isProductInBasket = basket.some((item) => item.id === product.id);
+	const handleAddToCart = () => {
+		if (!isProductInBasket) {
+			addBasket(product); // Add the current product to the basket
+		}
+	};
+
 	if (!product.id) {
 		return <h2>Product not found</h2>;
 	}
-
 	return (
 		<section className={s.product}>
 			<div className={s.product__images}>
@@ -33,7 +42,7 @@ const Product = () => {
 						backgroundImage: `url(${currentImage || product.images})`,
 					}}
 				/>
-				
+
 				<div className={s.product__images_list}>
 					{/* Since there is no database, we have to handle it this way. */}
 					{product.images && (
@@ -66,15 +75,11 @@ const Product = () => {
 				<div className={s.product__info_description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur in a corrupti totam! Architecto itaque doloremque corporis nisi nemo commodi reiciendis quis, quidem, impedit quasi autem delectus. Assumenda, magni at!</div>
 				<div className={s.product__info_actions}>
 					<button
-						// onClick={addToCart}
-						className={s.add}
-					// disabled={!currentSize}
+						onClick={handleAddToCart}
+						className={`${s.add} ${isProductInBasket ? s.added : ''}`}
 					>
-						Add to cart
+						{isProductInBasket ? "Added to Cart" : "Add to Cart"}
 					</button>
-					<button
-						//  onClick={addToFavorite}
-						className={s.favourite}>Add to favourites</button>
 				</div>
 
 				<div className={s.product__info_bottom}>

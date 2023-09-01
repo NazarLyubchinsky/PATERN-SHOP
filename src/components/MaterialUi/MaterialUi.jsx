@@ -8,6 +8,25 @@ export const MaterialUi = createTheme({
 					border: '1px solid grey'
 				},
 			}
+		},
+		MuiOutlinedInput: {
+			styleOverrides: {
+				root: {
+					border: '1px solid grey',
+					color: '#fff',
+
+				},
+
+			},
+		},
+		MuiFormControl: {
+			styleOverrides: {
+				root: {
+					width: " 100%"
+
+				},
+
+			},
 		}
 
 	},
