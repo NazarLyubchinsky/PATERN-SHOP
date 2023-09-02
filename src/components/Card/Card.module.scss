@@ -63,5 +63,17 @@
 	.catalog__card {
 		width: 100%;
 		min-width: 300px;
+		.card {
+			background-color: #191b1c;
+			border-radius: 13px 13px 13px 13px;
+			&__text {
+				margin-top: 0;
+				padding: 10px 22px;
+			}
+			&__img {
+				min-height: 300px;
+				max-height: 300px;
+			}
+		}
 	}
 }

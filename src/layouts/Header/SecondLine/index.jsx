@@ -27,6 +27,7 @@ const SecondLine = () => {
 	return (
 		<section className={s.secondLine}>
 			<div className={s.secondLine__wrapper}>
+			<BurgerModal />
 				<div className={s.secondLine__title}>
 					<Link to='/' className={s.secondLine__logo}>PATERN</Link>
 				</div>
@@ -42,12 +43,6 @@ const SecondLine = () => {
 								color: isActive ? 'greenyellow' : 'white'
 							})}>Catalog</NavLink>
 						</li>
-						<li className={s.secondLine__item}>
-							<NavLink to={ROUTES.CETE} style={({ isActive }) => ({
-								color: isActive ? 'greenyellow' : 'white',
-							})}>Personal information</NavLink>
-						</li>
-
 					</ul>
 					{
 						user.email.length ? <span onClick={logOutUser} className={s.secondLine__user}>
@@ -81,7 +76,6 @@ const SecondLine = () => {
 						{basket.length}
 					</div>
 					<BasketZero show={show} setShow={setShow} />
-				<BurgerModal />
 				</div>
 			</div>
 		</section >

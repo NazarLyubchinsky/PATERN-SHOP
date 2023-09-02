@@ -63,8 +63,12 @@
 }
 @media only screen and (max-width: 768px) {
 	.secondLine {
+		padding: 0 25px;
 		height: 100px;
 		margin-top: 10px;
+		&__wrapper {
+			gap: 25px;
+		}
 		&__logo {
 			font-size: 30px;
 		}

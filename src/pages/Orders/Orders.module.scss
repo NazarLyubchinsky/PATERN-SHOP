@@ -98,12 +98,12 @@
 			padding: 13px;
 
 			&_label {
-				flex-direction: column;
-				gap: 15px;
+				gap: 10px;
 				margin-top: 15px;
 			}
 			&_input {
 				width: 100%;
+				padding: 13px 15px;
 			}
 		}
 	}
@@ -112,6 +112,9 @@
 	.orders {
 		&__contact {
 			padding: 13px;
+			&_label {
+				flex-direction: column;
+			}
 			&_btns {
 				flex-direction: column;
 			}

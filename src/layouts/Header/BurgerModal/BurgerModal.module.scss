@@ -29,7 +29,7 @@
 	position: relative;
 	position: fixed;
 	top: 0;
-	right: 0;
+	left: 0;
 	background: var(--dark);
 	width: 320px;
 	height: 100vh;
@@ -38,7 +38,7 @@
 }
 @keyframes slideIn {
 	0% {
-		transform: translateX(100%);
+		transform: translateX(-100%);
 	}
 	100% {
 		transform: translateX(0);
@@ -63,7 +63,6 @@
 	margin-top: 50px;
 }
 .nav {
-	margin-top: 50px;
 	display: flex;
 	flex-direction: column;
 	gap: 90px;
