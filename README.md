@@ -26,8 +26,6 @@ Please note that there might be issues with loading products from server on the 
 
 ## main features
 
-The main part of the dashboard screen features a table with the following columns:
-
 - Private Authentication: Every user must authenticate themselves before using the store, ensuring data security and confidentiality.
 - Product Catalog: We offer a product catalog that can be easily browsed by users. You can search for products in different categories and filter them by price, as well as search by name.
 - Product Creation: Users have the option to create new products and add them to the catalog. This helps keep the product range constantly updated.
