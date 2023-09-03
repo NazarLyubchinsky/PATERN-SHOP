@@ -24,7 +24,7 @@ Please note that there might be issues with loading products from server on the 
 
  The application is designed with user-friendly features and a responsive layout.
 
-## main-features
+## main features
 
 The main part of the dashboard screen features a table with the following columns:
 
