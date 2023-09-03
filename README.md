@@ -6,7 +6,6 @@ This repository contains code for a React application developed to create a user
 
 - [Live Demo](#live-demo)
 - [Description](#description)
-- [Dashboard Layout](#dashboard-layout)
 - [The main features of the store include:](#The main features of the store include:)
 - [Backend](#backend)
 - [Frontend](#frontend)
