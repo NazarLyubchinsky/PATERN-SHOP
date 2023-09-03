@@ -6,7 +6,7 @@ This repository contains code for a React application developed to create a user
 
 - [Live Demo](#live-demo)
 - [Description](#description)
-- [The main features of the store include:](#The-main-features-of-the-store-include:)
+- [The main features of the store include:](#main-features)
 - [Backend](#backend)
 - [Frontend](#frontend)
 - [UI Requirements](#ui-requirements)
@@ -24,7 +24,7 @@ Please note that there might be issues with loading products from server on the 
 
  The application is designed with user-friendly features and a responsive layout.
 
-## The main features of the store include:
+## main-features
 
 The main part of the dashboard screen features a table with the following columns:
 
