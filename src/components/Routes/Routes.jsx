@@ -13,11 +13,12 @@ import Register from '../../pages/Register/Register'
 
 import { CustomContext } from '../../utils/context/Context'
 import { ROUTES } from '../../utils/routes'
+import PageNone from '../PageNone/PageNone'
 
 
 const AppRoutes = () => {
 	const { user } = useContext(CustomContext);
-	
+
 	return (
 
 		<Routes>
@@ -28,7 +29,9 @@ const AppRoutes = () => {
 					<Route path={`${ROUTES.PRODUCT}/:id`} element={<Product />} />
 					<Route path={`${ROUTES.ADD}`} element={<AddProduct />} />
 					<Route path={`${ROUTES.BASKET}`} element={<Basket />} />
-					<Route path={`${ROUTES.ORDERS}`} element={<Orders/>}/>
+					<Route path={`${ROUTES.ORDERS}`} element={<Orders />} />
+					<Route path='*' element={<PageNone status={404}/>} />
+					{/* <Route path="*" element={<PageNone status={404} />} */}
 				</Route>
 				:
 				<Route path="/" element={<Register />} />}
